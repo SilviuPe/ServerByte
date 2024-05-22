@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'Inter'; /* Name of the font */
+    src: url('../../Assets/Inter.ttf') format('truetype'); /* Path to the font file */
+    /* You can also specify other font formats here, like woff, woff2, eot */
+}
+
+.Homepage_main_body {
+    font-family: 'Inter', sans-serif;
+}

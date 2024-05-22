@@ -1,0 +1,67 @@
+.Header_body {
+    display: flex;
+    align-items: center; /* Aligns the items vertically in the center */
+    width: 100%; /* Adjust the width as needed */
+}
+
+
+
+
+
+/* HEADER LOGO STYLE -------------->*/
+.Header_logo {
+    padding-left: 3rem;
+}
+
+/* -------------------------------->*/
+
+
+
+
+
+
+
+
+
+/* HEADER LINKS STYLE -------------->*/
+.Header_links{
+    padding-left: 5rem;
+    display: flex;
+    justify-content: space-between;
+}
+.Header_links div {
+    padding-left: 3.5rem;
+    font-size: 20px;
+}
+/* -------------------------------->*/
+
+
+
+
+
+/* HEADER OPTIONS STYLE -------------->*/
+.Header_options {
+    margin-left: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.Header_options div {
+    padding-right: 2rem;
+}
+.Header_options .Register_button {
+    background: transparent;
+    border: transparent;
+    color: white;
+    font-size: 16px;
+}
+
+.Header_options .Login_button {
+    background-color: #0047FF;
+    border: transparent;
+    color: white;
+    padding: 0.5rem 2rem 0.5rem 2rem;
+    font-size: 16px;
+    border-radius: 5px;
+}
+/* -------------------------------->*/
