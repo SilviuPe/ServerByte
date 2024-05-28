@@ -2,8 +2,8 @@ import React from 'react'
 //import './ServerPlan.css';
 import  { useState, useEffect, useRef } from 'react';
 import { scroll_page_down, scroll_page_up, calculate_horizontal_position } from './ServerPlanFunctions.js';
-import { SelectionBar, SelecionBar_Storage } from "../SelectionBar_CustomBuild/SelectionBARS.jsx";
-
+import { SelectionBar, SelecionBar_Storage, OS_Selection, IP_addresses } from "../SelectionBar_CustomBuild/SelectionBARS.jsx";
+import  Price_calculator  from './Price_calculator.jsx';
 
 
 const Dropdown = () => {
@@ -25,17 +25,16 @@ const Dropdown = () => {
             <div className="relative">
                             <div className={`Dropdown mt-8 text-white rounded-md shadow-md transition-all duration-700 ease-out ${ isOpen ? 'opacity-100 h-full' : 'opacity-0 h-0'}`}>
                                 <h2 className='dropdown_custom_title font-bold text-center text-2xl'>Customize your configuration</h2>
-                                <div className='configuration_main_container flex mt-m mx-x3l transition-all duration-700' style={{ maxHeight: isOpen ? '100%' : '0', overflow : 'hidden'}}>
-                                    <div className=' configuration_options justify-center w-full items-center flex-2 mr-x3l'>
+                                <div className='configuration_main_container flex mt-m ml-x3l mr-xl transition-all duration-700' style={{ maxHeight: isOpen ? '100%' : '0', overflow : 'hidden'}}>
+                                    <div className=' configuration_options justify-center w-full items-center flex-1 pr-x '>
                                         <SelectionBar title = "CPUs: " type = 'cpu'/>
                                         <SelectionBar title = "RAM Memory:" type = 'ram'/>
                                         <SelecionBar_Storage/>
-                                        <SelectionBar title = "Network Speed: "/>
-                                        <div className='my-4'>Operating System:</div>
-                                        <div className='my-4'>IP Address Type:</div>
+                                        <OS_Selection/>
+                                        <IP_addresses/>
                                     </div>
-                                    <div className='flex-1 final_configuration justify-center w-full'>
-                                        asd
+                                    <div className='flex-1 final_configuration justify-center w-full flex-2'>
+                                        <Price_calculator/>
                                     </div>
                                 </div>
                             </div> 
@@ -83,7 +82,7 @@ const ServerPlan = () => {
     },[])
 
   return (
-    <div className={`ServerPlan_main_container font-extralight`}> 
+    <div className="ServerPlan_main_container font-extralight flex-1"> 
         <div className='ServerPlan_title_container items-center justify-center mt-xl mb-xl'>
             <h2 className={`text-center font-bold text-2xl text-white  opacity-${opacity}`} style={{transition: 'opacity 2s'}}>Server Plans</h2>
         </div>
