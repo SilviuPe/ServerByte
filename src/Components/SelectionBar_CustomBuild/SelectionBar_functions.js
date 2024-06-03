@@ -7,7 +7,7 @@ export const calculate_horizontal_position = (difference, actual_position, max_p
     
 
 
-    for( let i = 0; i <= max_points; i++) {
+    for( let i = 0; i < max_points; i++) {
         let pozitive_number = Math.abs(actual_position - (i * difference));
         
         if (pozitive_number < minimum ) {
@@ -16,36 +16,13 @@ export const calculate_horizontal_position = (difference, actual_position, max_p
             count = i+1;
         }
     }
-    console.log(difference,coords)
-    console.log("Actual pos:", actual_position)
+    let new_coords = (100*coords) / (max_points*difference);
     return {
-      coords : coords,
+      coords : new_coords,
       count : count
     }
   }
 
-export const enable_HDD = () => {
-    return {
-        hdd: 100,
-        sata: 50,
-        ssd: 50
-    }
-}
 
 
 
-export const enable_SATA = () => {
-    return {
-        hdd: 50,
-        sata: 100,
-        ssd: 50
-    }
-}
-
-export const enable_SSD = () => {
-    return {
-        hdd: 50,
-        sata: 50,
-        ssd: 100
-    }
-}
