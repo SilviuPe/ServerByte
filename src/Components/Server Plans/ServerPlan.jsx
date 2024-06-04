@@ -128,7 +128,7 @@ const ServerPlan = () => {
   return (
     <div className="ServerPlan_main_container font-extralight flex-1"> 
         <div className='ServerPlan_title_container items-center justify-center mt-xl mb-xl'>
-            <h2 className={`text-center font-bold text-2xl text-white  opacity-${opacity}`} style={{transition: 'opacity 2s'}}>Server Plans</h2>
+            <h2 className={`text-center font-bold text-2xl text-white  opacity-${opacity}`} style={{transition: 'opacity 2s'}}>Standard Server Plans</h2>
         </div>
         <div className="ServerPlans flex space-x-xl items-center justify-center">
             <div className={`bronze_plan text-bronze_color border-2 border-transparent hover:border-bronze_color 
