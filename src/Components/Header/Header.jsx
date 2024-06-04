@@ -1,9 +1,13 @@
 import React from 'react'
 import logo from '../../Assets/Logo.png';
-
+import Header_Functions from './Header';
 const Header = () => {
-  return (
-    <div className='Header_body flex text-white'>
+
+    const functions = Header_Functions('HEADER');
+
+
+    return (
+    <div className='Header_body flex text-white' id = 'HEADER'>
         <div className='Header_logo pl-s'>
             <img src = {logo}/>
         </div>
@@ -20,7 +24,7 @@ const Header = () => {
                 <button className='Login_button bg-background_buttons_color px-x py-2 rounded-s'>Login</button> </div>
         </div>
     </div>
-  )
+    )
 }
 
 export default Header;
