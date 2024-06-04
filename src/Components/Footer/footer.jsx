@@ -15,7 +15,7 @@ import FQAIMG from '../../Assets/FAQHelp.png';
 
 const Footer = () => {
   return (
-    <div className='Footer flex px-m text-white pb-m'>
+    <div className='Footer flex px-m text-white pb-m mt-x2l'>
         <div className='contact_us w-full'>
             <h2 className='title text-center mb-s text-lg'> Contact Us</h2>
             <div className='flex justify-evenly h-full' style = {{color: 'rgba(255,255,255,0.7)'}}>
