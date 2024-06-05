@@ -53,7 +53,7 @@ const Dropdown = () => {
 
         return (
             <div className="relative pt-x" id = 'CUSTOM_CONFIG_DROPDOWN'>
-                            <div className={`Dropdown mt-x text-white rounded-md shadow-md transition-all duration-700 ease-out ${ isOpen ? 'opacity-100 h-full' : 'opacity-0 h-0'}`}>
+                            <div className={`Dropdown mt-x text-white rounded-md transition-all duration-700 ease-out ${ isOpen ? 'opacity-100 h-full' : 'opacity-0 h-0'}`}>
                                 <h2 className='dropdown_custom_title font-bold text-center text-2xl'>Customize your configuration</h2>
                                 <div className='configuration_main_container flex mt-s ml-x2l mr-xl transition-all duration-700' style={{ maxHeight: isOpen ? '100%' : '0', overflow : 'hidden'}}>
                                     <div className=' configuration_options flex flex-col justify-center w-full flex-1 pr-x'>
