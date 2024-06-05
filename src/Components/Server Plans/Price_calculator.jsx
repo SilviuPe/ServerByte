@@ -43,7 +43,6 @@ const Price_calculator = forwardRef((props, ref) => {
     })) 
 
     useEffect(() => {
-        
         getIMG();
     },[configuration.os])
 

@@ -34,9 +34,9 @@ const Dropdown = () => {
         // useEffect hook for every render for the dropdown
         useEffect(() => {
             if (isOpen)
-                scroll_page_down()
+                scroll_page_down('CUSTOM_CONFIG_DROPDOWN')
             else 
-                scroll_page_up()
+                scroll_page_up('ServerPlan_CONTAINER')
         })
 
         // When the dropdown button (Custom Plan) is clicked this function is called 
@@ -52,7 +52,7 @@ const Dropdown = () => {
         }
 
         return (
-            <div className="relative">
+            <div className="relative pt-x" id = 'CUSTOM_CONFIG_DROPDOWN'>
                             <div className={`Dropdown mt-x text-white rounded-md shadow-md transition-all duration-700 ease-out ${ isOpen ? 'opacity-100 h-full' : 'opacity-0 h-0'}`}>
                                 <h2 className='dropdown_custom_title font-bold text-center text-2xl'>Customize your configuration</h2>
                                 <div className='configuration_main_container flex mt-s ml-x2l mr-xl transition-all duration-700' style={{ maxHeight: isOpen ? '100%' : '0', overflow : 'hidden'}}>
@@ -126,7 +126,7 @@ const ServerPlan = () => {
 
 
   return (
-    <div className="ServerPlan_main_container font-extralight flex-1"> 
+    <div className="ServerPlan_main_container font-extralight flex-1 pt-x" id = "ServerPlan_CONTAINER"> 
         <div className='ServerPlan_title_container items-center justify-center mt-xl mb-xl'>
             <h2 className={`text-center font-bold text-2xl text-white  opacity-${opacity}`} style={{transition: 'opacity 2s'}}>Standard Server Plans</h2>
         </div>
