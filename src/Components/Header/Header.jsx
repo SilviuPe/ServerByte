@@ -5,6 +5,9 @@ const Header = () => {
 
     const functions = Header_Functions('HEADER');
 
+    const handlePlanMouseDown = () => {
+        functions.scroll_to_this_component('ServerPlan_CONTAINER');
+    }
 
     return (
     <div className='Header_body flex text-white' id = 'HEADER'>
@@ -12,9 +15,9 @@ const Header = () => {
             <img src = {logo}/>
         </div>
         <div className='Header_links flex items-center space-x-s pl-s'>
-            <div>FAQ</div>
-            <div>Support</div>
-            <div>Plans</div>
+            <div><span className='cursor-pointer'>FAQ</span></div>
+            <div><span className='cursor-pointer'>Support</span></div>
+            <div><span className='cursor-pointer' onClick={handlePlanMouseDown}>Plans</span></div>
         </div>
 
         <div className='Header_options flex items-center space-x-8 ml-auto pr-s'>
