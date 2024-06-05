@@ -6,7 +6,7 @@ const Header = () => {
     const functions = Header_Functions('HEADER');
 
     const handlePlanMouseDown = () => {
-        functions.scroll_to_this_component('ServerPlan_CONTAINER');
+        functions.scroll_to_specific_component('ServerPlan_CONTAINER');
     }
 
     return (

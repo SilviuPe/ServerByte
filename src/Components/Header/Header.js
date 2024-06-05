@@ -12,6 +12,7 @@ const Header_Functions = (id) => {
 
     return {
         scroll_to_this_component,
+        scroll_to_specific_component
     }
 }
 
