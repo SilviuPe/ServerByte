@@ -23,15 +23,15 @@ const Footer = () => {
                     <h2 className='title text-center mb-x'> Address </h2>
                     <div classname = 'items-center'>
                         <div className='flex mt-pc1 items-center hover:text-white cursor-pointer'>
-                            <img style = {{width:'16px', height:'16px'}} src = {CustomIMG}></img>
+                            <img style = {{width:'16px', height:'16px'}} src = {GlobeIMG}></img>
                             <p className = "ml-5 text-sm">Romania</p>
                         </div>
                         <div className='flex mt-pc1 items-center hover:text-white cursor-pointer'>
-                            <img style = {{width:'16px', height:'16px'}} src = {CloudIMG}></img>
+                            <img style = {{width:'16px', height:'16px'}} src = {CheckpointIMG}></img>
                             <p className = "ml-5 text-sm">Galati, Sendreni</p>
                         </div>
                         <div className='flex mt-pc1 items-center hover:text-white cursor-pointer'>
-                            <img style = {{width:'16px', height:'16px'}} src = {PolicyIMG}></img>
+                            <img style = {{width:'16px', height:'16px'}} src = {MapIMG}></img>
                             <p className = "ml-5 text-sm">Str. Comertului Nr.23</p>
                         </div>
                     </div>
@@ -62,15 +62,15 @@ const Footer = () => {
                     <h2 className='title text-center mb-x'> ServerByte </h2>
                     <div classname = 'items-center '>
                         <div className='flex mt-pc1 items-center hover:text-white cursor-pointer'>
-                            <img style = {{width:'16px', height:'16px'}} src = {GlobeIMG}></img>
+                            <img style = {{width:'16px', height:'16px'}} src = {CustomIMG}></img>
                             <p className = "ml-5 text-sm">Custom VPS </p>
                         </div>
                         <div className='flex mt-pc1 items-center hover:text-white cursor-pointer'>
-                            <img style = {{width:'16px', height:'16px'}} src = {CheckpointIMG}></img>
+                            <img style = {{width:'16px', height:'16px'}} src = {CloudIMG}></img>
                             <p className = "ml-5 text-sm">VPS Plans</p>
                         </div>
                         <div className='flex mt-pc1 items-center hover:text-white cursor-pointer'>
-                            <img style = {{width:'16px', height:'16px'}} src = {MapIMG}></img>
+                            <img style = {{width:'16px', height:'16px'}} src = {PolicyIMG}></img>
                             <p className = "ml-5 text-sm">ServerByte Policy</p>
                         </div>
                     </div>
