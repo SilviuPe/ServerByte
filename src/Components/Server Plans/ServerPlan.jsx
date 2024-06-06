@@ -37,7 +37,7 @@ const Dropdown = () => {
                 scroll_page_down('CUSTOM_CONFIG_DROPDOWN')
             else 
                 scroll_page_up('ServerPlan_CONTAINER')
-        })
+        }, [isOpen])
 
         // When the dropdown button (Custom Plan) is clicked this function is called 
         const toggleDropdown = () => {
