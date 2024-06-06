@@ -16,7 +16,7 @@ const Dropdown = () => {
         const [isOpen,setIsOpen] = useState(false);
 
         const priceRef = useRef(null); // Refference for final conrigutation plan section
-
+        const firstRender = useRef(true);
         // The configuration state
         const [configuration,setConfiguration] = useState({
             cpu: 1,
@@ -33,6 +33,11 @@ const Dropdown = () => {
 
         // useEffect hook for every render for the dropdown
         useEffect(() => {
+            if (firstRender.current === true) {
+                firstRender.current = false;
+                console.log("FIRST RENDER");
+                return;
+            }
             if (isOpen)
                 scroll_page_down('CUSTOM_CONFIG_DROPDOWN')
             else 
