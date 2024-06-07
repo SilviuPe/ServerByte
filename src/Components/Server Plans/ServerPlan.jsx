@@ -9,12 +9,10 @@ import OS_Selection from '../OS_Selection/OS_selection.jsx';
 import Network_selection_bar from '../NetworkSelectionBar/NetworkSelectionBar.jsx';
 import IP_addresses from '../IP_address_options/IP_address_options.jsx';
 import SelecionBar_Storage from '../Storage_selection/Storage_selection.jsx';
-import  Price_calculator  from './Price_calculator.jsx';
-
+import Price_calculator from './Price_calculator.jsx';
 
 const Dropdown = () => {
         const [isOpen,setIsOpen] = useState(false);
-
         const priceRef = useRef(null); // Refference for final conrigutation plan section
         const firstRender = useRef(true);
         // The configuration state
@@ -48,7 +46,6 @@ const Dropdown = () => {
         const toggleDropdown = () => {
             setIsOpen(!isOpen);
         }
-
         // CALLBACK function for every option in configuration. 
         // This is called when the configuration is modified, so the FINAL CONFIGURATION PRICE is updated.
         const updateConfiguration = (type, details) => {

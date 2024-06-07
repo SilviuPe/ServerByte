@@ -10,11 +10,14 @@ import CentosIMG from '../../Assets/Centos.png'
 import UbuntuIMG from '../../Assets/Ubuntu.png'
 import CustomOsIMG from '../../Assets/CustomOS.png'
 
+import {Price_functions} from './ServerPlanFunctions.js';
+
+import prices from './prices.json';
+
 const Price_calculator = forwardRef((props, ref) => {
-
-
-
-
+    const [price,setPrice] = useState(5);
+    const price_functions = Price_functions();
+    // initial configuration 
     const [configuration,setConfiguration] = useState({
         cpu: 1,
         ram: 1,
@@ -32,9 +35,13 @@ const Price_calculator = forwardRef((props, ref) => {
         OSimage: WindowsIMG
     })
 
+    useEffect(() => {
+        setPrice(price_functions.update_price(prices, configuration));
+    }, [configuration])
+
+    // callback
     useImperativeHandle(ref, () => ({
         updateConfiguration(type,det) {
-            console.log(true,type)
             setConfiguration((prevConfig) => ({
                 ...prevConfig,
                 [type]: det
@@ -42,6 +49,8 @@ const Price_calculator = forwardRef((props, ref) => {
         }
     })) 
 
+
+    //change OS image when os option is changed
     useEffect(() => {
         getIMG();
     },[configuration.os])
@@ -69,6 +78,7 @@ const Price_calculator = forwardRef((props, ref) => {
             OSimage: CustomOsIMG
         }))
     }
+
 
     return (
     <div className='Price_calculator items-center'>
@@ -101,7 +111,7 @@ const Price_calculator = forwardRef((props, ref) => {
         </div>
         <div className='final_price flex justify-end pr-m'>
             <div>
-                <p className='text-center'>Final price: <b>89,99$</b></p>
+                <p className='text-center'>Final price: <b>{price}$</b></p>
                 <button className='payment_button bg-background_buttons_color px-6 rounded-xl text-sm'>continue with payment</button>
             </div>
         </div>
