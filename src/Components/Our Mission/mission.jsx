@@ -8,7 +8,7 @@ function Mission() {
           <h2 className='font-bold text-2xl text-center'>Why choosing us?</h2>
         </div>
         <div className='services flex px-x justify-between'>
-          <div className='custom_build px-x bg-white_transparent_full py-x rounded-xl mx-s border-2 border-transparent hover:border-2 hover:border-white_transparent'>
+          <div className='custom_build px-x bg-white_transparent_full shadow-2xl py-x rounded-xl mx-s border-2 border-transparent hover:border-2 hover:border-white_transparent'>
             <h3 style = {{fontWeight: 500, paddingLeft: '5%'}}><span className = "cursor-pointer no-underline hover:underline">Custom Build</span></h3>
             <div className='description mt-x'>
               <p className='text-lg'>Server Byte provides you with the opportunity to select a custom build at an affordable price. 
@@ -16,7 +16,7 @@ function Mission() {
               </p>
             </div>
           </div>
-          <div className='support px-x bg-white_transparent_full py-x rounded-xl mx-s border-2 border-transparent hover:border-2 hover:border-white_transparent'>
+          <div className='support px-x bg-white_transparent_full shadow-2xl py-x rounded-xl mx-s border-2 border-transparent hover:border-2 hover:border-white_transparent'>
             <h3 style = {{fontWeight: 500, paddingLeft: '5%'}}><span className = "cursor-pointer no-underline hover:underline">Support 24/7</span></h3>
             <div className='description mt-x'>
               <p className='text-lg'> Server Byte offers exceptional customer support, available around the clock. 
@@ -26,7 +26,7 @@ function Mission() {
             
             </div>
           </div>
-          <div className='unlimited traffic px-x bg-white_transparent_full py-x rounded-xl mx-s border-2 border-transparent hover:border-2 hover:border-white_transparent'>
+          <div className='unlimited traffic px-x bg-white_transparent_full shadow-2xl py-x rounded-xl mx-s border-2 border-transparent hover:border-2 hover:border-white_transparent'>
             <h3 style = {{fontWeight: 500, paddingLeft: '5%'}}><span className = "cursor-pointer no-underline hover:underline">Unlimited Traffic</span></h3>
             <div className='description mt-x'>
               <p className='text-lg'>Our servers come with unlimited traffic capabilities, allowing you to transfer data without any restrictions. 
@@ -36,7 +36,7 @@ function Mission() {
           </div>
         </div>
         <div className='services_row_2 flex px-x2l justify-between mt-s'>
-          <div className='custom_build px-x bg-white_transparent_full py-x rounded-xl mx-s border-2 border-transparent hover:border-2 hover:border-white_transparent'>
+          <div className='custom_build px-x bg-white_transparent_full shadow-2xl py-x rounded-xl mx-s border-2 border-transparent hover:border-2 hover:border-white_transparent'>
             <h3 style = {{fontWeight: 500, paddingLeft: '5%'}}><span className = "cursor-pointer no-underline hover:underline">Mobile SSH</span></h3>
             <div className='description mt-x'>
               <p className='text-lg'>With ServerByte, you can securely connect to your servers using SSH directly from your mobile device. 
@@ -45,7 +45,7 @@ function Mission() {
               </p>
             </div>
           </div>
-          <div className='support px-x bg-white_transparent_full py-x rounded-xl mx-xl border-2 border-transparent hover:border-2 hover:border-white_transparent'>
+          <div className='support px-x bg-white_transparent_full shadow-2xl py-x rounded-xl mx-xl border-2 border-transparent hover:border-2 hover:border-white_transparent'>
             <h3 style = {{fontWeight: 500, paddingLeft: '5%'}}><span className = "cursor-pointer no-underline hover:underline">Unbeatable Affordability</span></h3>
             <div className='description mt-x'>
               <p className='text-lg'> At ServerByte, we believe that cutting-edge technology should be accessible to everyone. 
