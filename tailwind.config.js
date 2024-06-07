@@ -56,7 +56,7 @@ module.exports = {
         white_transparent: "rgba(200,200,200,0.5)",
         black: '#000000',
         white: '#ffffff',
-        white_transparent_full: "rgba(200,200,200,0.15)",
+        white_transparent_full: "rgba(200,200,200,0.1)",
       }
     },
   },
