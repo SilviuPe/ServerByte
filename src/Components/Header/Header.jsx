@@ -10,8 +10,8 @@ const Header = () => {
     }
 
     return (
-    <div className='Header_body flex text-black bg-white' id = 'HEADER'>
-        <div className='Header_logo pl-s' style = {{paddingTop: 20, paddingBottom: 10,paddingRight:10, paddingLeft:30,}}>
+    <div className='Header_body flex text-white bg-contect_bg_color px-s pt-3' id = 'HEADER'>
+        <div className='Header_logo pl-s' style = {{paddingTop: 30, paddingBottom: 30,paddingRight:10, paddingLeft:30,}}>
             <img src = {logo} style={{width: 165, height: 55}}/>
         </div>
         <div className='Header_links flex items-center space-x-s pl-s'>
@@ -24,7 +24,7 @@ const Header = () => {
             <div className='register_option'>
                 <button className='Register_button'>Register</button> </div>
             <div className='login_option text-black'>
-                <button className='Login_button bg-accent_color px-x py-2 rounded-s'>Login</button> </div>
+                <button className='Login_button bg-background_buttons_color text-white px-x py-2 rounded-lg'>Login</button> </div>
         </div>
     </div>
     )
