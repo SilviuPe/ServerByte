@@ -9,7 +9,7 @@ const OurMission = () => {
         <div className='flex-1 flex items-center justify-center'>
             <div>
                 <div className='title'>
-                    <h1 className='text-7xl font-bold'>
+                    <h1 className='text-8xl font-bold'>
                         <span>Affordable</span> <br/>
                         <span> VPS hosting</span> <br/>
                         <span> provider</span></h1>
