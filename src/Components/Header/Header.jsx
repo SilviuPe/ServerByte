@@ -10,9 +10,9 @@ const Header = () => {
     }
 
     return (
-    <div className='Header_body flex text-white' id = 'HEADER'>
-        <div className='Header_logo pl-s'>
-            <img src = {logo}/>
+    <div className='Header_body flex text-black bg-white' id = 'HEADER'>
+        <div className='Header_logo pl-s' style = {{paddingTop: 20, paddingBottom: 10,paddingRight:10, paddingLeft:30,}}>
+            <img src = {logo} style={{width: 165, height: 55}}/>
         </div>
         <div className='Header_links flex items-center space-x-s pl-s'>
             <div><span className='cursor-pointer'>FAQ</span></div>
@@ -23,7 +23,7 @@ const Header = () => {
         <div className='Header_options flex items-center space-x-8 ml-auto pr-s'>
             <div className='register_option'>
                 <button className='Register_button'>Register</button> </div>
-            <div className='login_option'>
+            <div className='login_option text-white'>
                 <button className='Login_button bg-background_buttons_color px-x py-2 rounded-s'>Login</button> </div>
         </div>
     </div>
