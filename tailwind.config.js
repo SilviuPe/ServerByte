@@ -38,6 +38,10 @@ module.exports = {
       pc8 : '80%'
     },
     extend: {
+      boxShadow: {
+        '2xl-colored-fade': '2px 2px 10px 0px rgb(79,255,234)',
+        '2xl-colored-bright' : '4px 4px 20px 5px rgb(79,255,234)' 
+      },
       transitionProperty: {
         'h': 'height'
       },
@@ -57,6 +61,9 @@ module.exports = {
         black: '#000000',
         white: '#ffffff',
         white_transparent_full: "rgba(200,200,200,0.1)",
+        contect_bg_color: '#000823',
+        content_bg_darker_color: 'rgba(24,17,40,0.3)',
+        accent_color: '#4FFFEA',
       }
     },
   },
