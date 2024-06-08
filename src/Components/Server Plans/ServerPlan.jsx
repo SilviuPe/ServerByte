@@ -1,7 +1,7 @@
 import React from 'react'
 
 import  { useState, useEffect, useRef } from 'react';
-import { scroll_page_down, scroll_page_up } from './ServerPlanFunctions.js';
+import { Plans_functions, scroll_page_down, scroll_page_up } from './ServerPlanFunctions.js';
 import { SelectionBar } from "../SelectionBar_CustomBuild/SelectionBARS.jsx";
 
 
@@ -54,10 +54,10 @@ const Dropdown = () => {
         }
 
         return (
-            <div className="relative pt-x" id = 'CUSTOM_CONFIG_DROPDOWN'>
+            <div className="relative pt-x text-xs " id = 'CUSTOM_CONFIG_DROPDOWN'>
                             <div className={`Dropdown mt-x text-white rounded-md transition-all duration-700 ease-out ${ isOpen ? 'opacity-100 h-full' : 'opacity-0 h-0'}`}>
                                 <h2 className='dropdown_custom_title font-bold text-center text-2xl'>Customize your configuration</h2>
-                                <div className='configuration_main_container flex mt-s ml-x2l mr-xl transition-all duration-700' style={{ maxHeight: isOpen ? '100%' : '0', overflow : 'hidden'}}>
+                                <div className='configuration_main_container flex mt-s ml-lx mr-xl transition-all duration-700' style={{ maxHeight: isOpen ? '100%' : '0', overflow : 'hidden'}}>
                                     <div className=' configuration_options flex flex-col justify-center w-full flex-1 pr-x'>
                                         <div>
                                             <SelectionBar title = "CPUs: " type = 'cpu' callback = {updateConfiguration}/>
@@ -90,9 +90,13 @@ const Dropdown = () => {
 const ServerPlan = () => {
     const [opacity,setOpacity] = useState(0);
     const [plansOpacity, setPlansOpacity] = useState([0,0,0]); // Plans copacity. Every element refers to a plan opacity in the logical order
-
-
-
+    const [selectedPlan,setSelectedPlan] = useState({
+        bronze : false,
+        silver : true,
+        gold: false
+    });
+    const [minimumHeight, setMinimumHeight] = useState(0);
+    const plan_functions = Plans_functions();
     useEffect(() => {
         setOpacity(1);
     },[])
@@ -126,16 +130,23 @@ const ServerPlan = () => {
     },[])
 
 
+    useEffect(() => {
+        plan_functions.calculate_min_height_of_box(selectedPlan, setMinimumHeight);
+    }, [minimumHeight])
+
 
   return (
-    <div className="ServerPlan_main_container font-extralight flex-1 pt-x" id = "ServerPlan_CONTAINER"> 
+    <div className="ServerPlan_main_container font-normal text-xl flex-1 mt-s pt-x bg-contect_bg_color" id = "ServerPlan_CONTAINER"> 
         <div className='ServerPlan_title_container items-center justify-center mt-xl mb-xl'>
-            <h2 className={`text-center font-bold text-2xl text-white  opacity-${opacity}`} style={{transition: 'opacity 2s'}}>Standard Server Plans</h2>
+            <h2 className={`text-center font-bold text-4xl text-white  opacity-${opacity}`} style={{transition: 'opacity 2s'}}>Standard Server Plans</h2>
         </div>
-        <div className="ServerPlans flex space-x-xl items-center justify-center">
-            <div className={`bronze_plan text-bronze_color border-2 border-transparent hover:border-bronze_color 
-            transition duration-300 ease-in-out p-s rounded-lg
-            opacity-${plansOpacity[0]}`} style = {{transition: 'opacity 1.5s'}}>
+        <div className="ServerPlans flex space-x-x items-center justify-center px-s mb-m"
+             style = {{minHeight: `${minimumHeight}px`}}>
+            <div 
+                id = "bronze_plan"
+                className={`cursor-pointer bg-content_bg_darker_color  text-bronze_color p-s rounded-lg 
+                            transition-all transition-1000 ${selectedPlan.bronze ? 'shadow-2xl-colored-bronze-plan p-xl' : 'shadow-2xl-colored-bronze-plan-fade'}`} 
+                 onClick = {() => {plan_functions.select_plan(setSelectedPlan,'bronze')}}>
                 <div className='title_plan text-center mb-s'> Bronze Plan</div>
                 <div className='configuration space-y-6 px-6 rounded-md border-y border-bronze_color pb-8 pt-s'>
                     <div className='cpu'>vCPU: x1</div>
@@ -147,9 +158,11 @@ const ServerPlan = () => {
                 <div className='pl-s pt-6 text-center mt-6'> <p>Price: <b className='font-bold text-2'>4.99$ / month</b></p></div>
             </div>
             <div className='line_separator'></div>
-            <div className={`silver_plan text-silver_color border-2 border-transparent hover:border-silver_color 
-            transition duration-300 ease-in-out p-s rounded-lg
-            opacity-${plansOpacity[1]}`} style = {{transition: 'opacity 1.5s'}}>
+            <div 
+                id = "silver_plan"
+                className={`cursor-pointer bg-content_bg_darker_color text-silver_color p-s rounded-lg 
+                             transition-all transition-1000 ${selectedPlan.silver ? 'shadow-2xl-colored-silver-plan p-xl' : 'shadow-2xl-colored-silver-plan-fade'}`} 
+                onClick = {() => {plan_functions.select_plan(setSelectedPlan,'silver')}}>
                 <div className='title_plan text-center mb-s'> Silver Plan</div>
                 <div className='configuration space-y-6 px-6 rounded-md border-y border-silver_color pb-8 pt-s '>
                     <div className='cpu'>vCPU: x2</div>
@@ -161,9 +174,11 @@ const ServerPlan = () => {
                 <div className='pl-s pt-6 text-center mt-6'> <p>Price: <b className='font-bold'>49.99$ / month</b></p></div>
             </div>
             <div className='line_separator'></div>
-            <div className={`gold_plan text-gold_color border-2 border-transparent hover:border-gold_color 
-            transition duration-300 ease-in-out p-s rounded-lg
-            opacity-${plansOpacity[2]}`} style = {{transition: 'opacity 1.5s'}}>
+            <div 
+                id = "gold_plan"
+                className={`cursor-pointer bg-content_bg_darker_color text-gold_color p-s rounded-lg  
+                             transition-all transition-1000 ${selectedPlan.gold ? 'shadow-2xl-colored-gold-plan p-xl' : 'shadow-2xl-colored-gold-plan-fade'}`} 
+                 onClick = {() => {plan_functions.select_plan(setSelectedPlan,'gold')}}>
                 <div className='title_plan text-center mb-s'> Gold Plan</div>
                 <div className='configuration space-y-6 px-6 rounded-md border-y border-gold_color pb-8 pt-s'>
                     <div className='cpu'>vCPU: x4</div>
