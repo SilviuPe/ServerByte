@@ -40,7 +40,15 @@ module.exports = {
     extend: {
       boxShadow: {
         '2xl-colored-fade': '2px 2px 10px 0px rgb(79,255,234)',
-        '2xl-colored-bright' : '4px 4px 20px 5px rgb(79,255,234)' 
+        '2xl-colored-bright' : '4px 4px 20px 5px rgb(79,255,234)',
+        '2xl-colored-bronze-plan' : '0px 0px 40px 0px #C99D47',
+        '2xl-colored-silver-plan' : '0px 0px 40px 0px #E4F5FF',
+        '2xl-colored-gold-plan' : '0px 0px 40px 0px #FFF2AF',
+      
+      
+        '2xl-colored-bronze-plan-fade' : '0px 0px 10px 0px #C99D47',
+        '2xl-colored-silver-plan-fade' : '0px 0px 10px 0px #E4F5FF',
+        '2xl-colored-gold-plan-fade' : '0px 0px 10px 0px #FFF2AF'
       },
       transitionProperty: {
         'h': 'height'
@@ -62,6 +70,7 @@ module.exports = {
         white: '#ffffff',
         white_transparent_full: "rgba(200,200,200,0.1)",
         contect_bg_color: '#000823',
+        header_color_background: '#000D37',
         content_bg_darker_color: 'rgba(24,17,40,0.3)',
         accent_color: '#4FFFEA',
       }
