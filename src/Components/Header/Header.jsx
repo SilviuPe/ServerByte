@@ -23,8 +23,8 @@ const Header = () => {
         <div className='Header_options flex items-center space-x-8 ml-auto pr-s'>
             <div className='register_option'>
                 <button className='Register_button'>Register</button> </div>
-            <div className='login_option text-white'>
-                <button className='Login_button bg-background_buttons_color px-x py-2 rounded-s'>Login</button> </div>
+            <div className='login_option text-black'>
+                <button className='Login_button bg-accent_color px-x py-2 rounded-s'>Login</button> </div>
         </div>
     </div>
     )
