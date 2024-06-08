@@ -1,6 +1,7 @@
 import React from 'react'
 import logo from '../../Assets/Logo.png';
 import Header_Functions from './Header';
+import { useHistory } from 'react-router-dom';
 const Header = () => {
 
     const functions = Header_Functions('HEADER');
@@ -12,7 +13,11 @@ const Header = () => {
     return (
     <div className='Header_body flex text-white bg-contect_bg_color px-s pt-3' id = 'HEADER'>
         <div className='Header_logo pl-s' style = {{paddingTop: 30, paddingBottom: 30,paddingRight:10, paddingLeft:30,}}>
-            <img src = {logo} style={{width: 165, height: 55}}/>
+            <img src = {logo} style={{width: 165, height: 55, cursor: 'pointer'}}
+            onClick = {() => {
+                window.location.href = '/';
+            }}
+            />
         </div>
         <div className='Header_links flex items-center space-x-s pl-s'>
             <div><span className='cursor-pointer'>FAQ</span></div>
