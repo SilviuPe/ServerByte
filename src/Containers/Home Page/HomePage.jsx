@@ -6,16 +6,17 @@ import { useEffect, useState } from 'react';
 
 import { Header } from '../../Components';
 import { ServerPlan } from '../../Components';
-import { Mission } from '../../Components';
+import { Offer } from '../../Components';
 import { Footer } from '../../Components';
-
+import { OurMission } from '../../Components';
 const HomePage = () => {
 
 
   return (
     <div className="Homepage_main_body">
         <Header/>
-        <Mission/>
+        <OurMission/>
+        <Offer/>
         <ServerPlan/>
         <Footer></Footer>
     </div>
