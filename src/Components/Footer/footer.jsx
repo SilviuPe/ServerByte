@@ -12,7 +12,7 @@ import CloudIMG from '../../Assets/CloudDB.png';
 import PolicyIMG from '../../Assets/Policy.png';
 import SupportIMG from '../../Assets/SupportTeam.png';
 import FQAIMG from '../../Assets/FAQHelp.png';
-
+import MobileAPPIMG from '../../Assets/MobileSSH.png';
 const Footer = () => {
   return (
     <div className='Footer flex px-m text-white pb-m mt-x2l'>
@@ -58,7 +58,7 @@ const Footer = () => {
         <div className='contact_us w-full'>
             <h2 className='title text-center mb-s text-lg'> Direct Links</h2>
             <div className='flex justify-evenly h-full' style = {{color: 'rgba(255,255,255,0.7)'}}>
-                <div className='Address h-full'>
+                <div className='Serverbyte h-full'>
                     <h2 className='title text-center mb-x'> ServerByte </h2>
                     <div classname = 'items-center '>
                         <div className='flex mt-pc1 items-center hover:text-white cursor-pointer'>
@@ -73,9 +73,13 @@ const Footer = () => {
                             <img style = {{width:'16px', height:'16px'}} src = {PolicyIMG}></img>
                             <p className = "ml-5 text-sm">ServerByte Policy</p>
                         </div>
+                        <div className='flex mt-pc1 items-center hover:text-white cursor-pointer'>
+                            <img style = {{width:'16px', height:'16px'}} src = {MobileAPPIMG}></img>
+                            <p className = "ml-5 text-sm">Mobile APP</p>
+                        </div>
                     </div>
                 </div>
-                <div className='Contacts h-full'>
+                <div className='Customer-care h-full'>
                     <h2 className='title text-center mb-x'> Customer Care </h2>
                     <div className='items-center'>
                         <div className='flex mt-pc1 hover:text-white cursor-pointer'>
