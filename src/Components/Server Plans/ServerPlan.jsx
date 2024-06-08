@@ -54,7 +54,7 @@ const Dropdown = () => {
         }
 
         return (
-            <div className="relative pt-x text-xs " id = 'CUSTOM_CONFIG_DROPDOWN'>
+            <div className="relative pt-x text-sm " id = 'CUSTOM_CONFIG_DROPDOWN'>
                             <div className={`Dropdown mt-x text-white rounded-md transition-all duration-700 ease-out ${ isOpen ? 'opacity-100 h-full' : 'opacity-0 h-0'}`}>
                                 <h2 className='dropdown_custom_title font-bold text-center text-2xl'>Customize your configuration</h2>
                                 <div className='configuration_main_container flex mt-s ml-lx mr-xl transition-all duration-700' style={{ maxHeight: isOpen ? '100%' : '0', overflow : 'hidden'}}>
@@ -73,7 +73,7 @@ const Dropdown = () => {
                                     </div>
                                 </div>
                             </div> 
-                    <div className='CustomPlan_button_container flex mx-x3l mt-s pb-s items-center justify-center text-white'>
+                    <div className='CustomPlan_button_container flex mx-x3l mt-s pb-s items-center justify-center text-white text-base'>
                         <button style={{
                             borderTopLeftRadius: '1rem',
                             borderTopRightRadius: '1rem',
