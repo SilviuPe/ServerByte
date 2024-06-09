@@ -58,6 +58,7 @@ module.exports = {
       },
       backgroundImage: {
         'custom-img': "linear-gradient(rgba(255,255,255,0), rgba(0,0,20,1)), url('/src/Assets/background.png')",
+        'custom-img-login-page': "url('/src/Assets/background_login.png')"
       },
       colors: {
         background_buttons_color: '#0047FF',
@@ -73,6 +74,9 @@ module.exports = {
         header_color_background: '#000D37',
         content_bg_darker_color: 'rgba(24,17,40,0.3)',
         accent_color: '#4FFFEA',
+        login_background_color: '#091336',
+        green : 'rgb(0,150,0)',
+        red : 'rgb(255,0,0)'
       }
     },
   },
