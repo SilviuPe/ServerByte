@@ -75,7 +75,7 @@ const SelecionBar_Storage = ({callback}) => {
                         <div><p 
                             className="text-2"
                             style = {{fontSize : '12px', fontWeight: '500', marginLeft: `${pointPosition-1}%`}}>
-                                {standardStorageUnits[componentCount]} MB
+                                {standardStorageUnits[componentCount]} GB
                             </p></div>
                         <div
                             ref={barRef}
