@@ -29,7 +29,7 @@ const Field = ({title,type}) => {
 }
 
 
-const Login = () => {
+const Register = () => {
     const [policyAgree, setPolicyAgree] = useState(false);
     const handlePolicyButtonDown = () => {
         setPolicyAgree(!policyAgree)
@@ -113,4 +113,4 @@ const Login = () => {
     )
 }
 
-export default Login
+export default Register
