@@ -35,6 +35,10 @@ const Register = () => {
         setPolicyAgree(!policyAgree)
     }
 
+    const SignInButtonClicked = () => {
+        window.location.href = '/login';
+    }
+
 
     return (
     <div className='Login_page'>
@@ -105,7 +109,7 @@ const Register = () => {
                 </div>
                 <div className='sign_in_button grid place-items-center mt-s text-base text-white'>
                     <p>Already have an account?</p>
-                    <button className='text-sm font-bold mt-8'>Sign In</button>
+                    <button onClick = {SignInButtonClicked} className='text-sm font-bold mt-8'>Sign In</button>
                 </div>
             </div>
         </div>
