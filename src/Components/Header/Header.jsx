@@ -34,7 +34,10 @@ const Header = () => {
                     window.location.href = '/register'
                 }} className='Register_button'>Register</button> </div>
             <div className='login_option text-black'>
-                <button className='Login_button bg-background_buttons_color text-white px-x py-2 rounded-lg'>Login</button> </div>
+                <button onClick = {() => {
+                    window.location.href = '/login'
+                }} 
+                className='Login_button bg-background_buttons_color text-white px-x py-2 rounded-lg'>Login</button> </div>
         </div>
     </div>
     )
