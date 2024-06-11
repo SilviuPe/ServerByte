@@ -9,6 +9,9 @@ import FacebookIMG from '../../Assets/Facebook.png';
 import TwitterIMG from '../../Assets/Twitter.png';
 import GithubIMG from '../../Assets/Github.png';
 import GoogleIMG from '../../Assets/Google.png';
+import Logo from '../../Assets/Logo.png';
+
+
 
 import Lottie from 'lottie-react';
 import animationData from '../../Assets/Login_animations.json';
@@ -31,16 +34,24 @@ const Login = () => {
     const handlePolicyButtonDown = () => {
         setPolicyAgree(!policyAgree)
     }
-  return (
+
+
+    return (
     <div className='Login_page'>
-        <Header/>
-        <div className='Login_container flex mx-x2l mt-xl pb-xl'>
-            <div className='Message bg-login_background_color p-s w-full'>
-                <span className='block font-bold text-lg text-white pb-x'>Hello!</span> 
-                <span className='block font-base text-lg text-white pb-4'>We’re glad to see you again</span> 
-                <span className='block font-base text-lg text-white'>We will make sure you have the best experience 
-                using our services</span> <br/>
+        <div className='Login_container flex mx-x2l mt-xl mb-xl rounded rounded-3xl'>
+            <div className='Message bg-login_background_color w-full'>
+                <img 
+                    className = "logo cursor-pointer ml-x mt-x" 
+                    src = {Logo}
+                    onClick = {() => {
+                        window.location.href = '/';
+                    }}/>
             
+
+                <div className='grid place-items-center mt-m'>
+                    <span className='block font-semibold text-xl text-white pb-4'>Hello!</span> 
+                    <span className='block font-base text-xl text-white pb-4'>We’re glad to see you again</span> 
+                </div>
                 <div className='w-full flex justify-center mt-x'>
                     <div className='w-pc7'>
                         <Lottie animationData={animationData} loop={true}/>
@@ -86,7 +97,7 @@ const Login = () => {
                 </div>
                 <div className='flex justify-center mt-8'>
                     <div className='flex justify-between gap-8'>
-                        <img style = {{width:32, height:32, cursor: 'pointer'}} src = {GithubIMG}></img>
+                    <img style = {{width:32, height:32, cursor: 'pointer'}} src = {GithubIMG}></img>
                         <img style = {{width:32, height:32, cursor: 'pointer'}} src = {GoogleIMG}></img>
                         <img style = {{width:32, height:32, cursor: 'pointer'}} src = {TwitterIMG}></img>
                         <img style = {{width:32, height:32, cursor: 'pointer'}} src = {FacebookIMG}></img>
@@ -99,7 +110,7 @@ const Login = () => {
             </div>
         </div>
     </div>
-  )
+    )
 }
 
 export default Login
