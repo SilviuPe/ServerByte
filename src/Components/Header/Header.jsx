@@ -37,7 +37,7 @@ const Header = () => {
                 <button onClick = {() => {
                     window.location.href = '/login'
                 }} 
-                className='Login_button bg-background_buttons_color text-white px-x py-2 rounded-lg'>Login</button> </div>
+                className='Login_button bg-background_button_color text-white px-x py-2 rounded-lg'>Login</button> </div>
         </div>
     </div>
     )

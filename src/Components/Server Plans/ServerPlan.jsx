@@ -79,7 +79,7 @@ const Dropdown = () => {
                             borderTopRightRadius: '1rem',
                             borderBottomRightRadius: '2rem',
                             borderBottomLeftRadius: '2rem' }} 
-                            className='flex bg-background_buttons_color px-s py-1'
+                            className='flex bg-background_button_color px-s py-1'
                             onClick={toggleDropdown}
                         > { isOpen ? <> &uarr; </> : <>Custom Plan &darr;</> }</button>
                     </div>   

@@ -43,7 +43,7 @@ const Register = () => {
     return (
     <div className='Login_page'>
         <div className='Login_container flex mx-x2l mt-xl mb-xl rounded rounded-3xl'>
-            <div className='Message bg-login_background_color w-full'>
+            <div className='Message bg-split_screen_layout_background_color w-full'>
                 <img 
                     className = "logo cursor-pointer ml-x mt-x" 
                     src = {Logo}
@@ -62,7 +62,7 @@ const Register = () => {
                     </div>
                 </div>
             </div>
-            <div className='Login_field w-full text-sm bg-custom-img-login-page bg-cover pb-s'>
+            <div className='Login_field w-full text-sm bg-custom-img-split-screen-page bg-cover pb-s'>
                 <h1 className='title font-bold text-3xl text-white mt-xl text-center mb-s'>Sign In</h1>
                 <div className='flex flex-box justify-center'>
                     <div>
@@ -71,7 +71,7 @@ const Register = () => {
                     </div>
                 </div>
                 <div className='continue_button grid place-items-center mt-x p-6'>
-                    <button className='flex bg-background_buttons_color text-white py-1 px-s rounded rounded-xs justify-center'>continue</button>
+                    <button className='flex bg-background_button_color text-white py-1 px-s rounded rounded-xs justify-center'>continue</button>
                 </div>
                 <div className='flex separator_line justify-center items-center mt-x'>
                     <img className = "h-2 w-xl" src = {line}></img>

@@ -57,26 +57,33 @@ module.exports = {
         '4': '4px',
       },
       backgroundImage: {
-        'custom-img': "linear-gradient(rgba(255,255,255,0), rgba(0,0,20,1)), url('/src/Assets/background.png')",
-        'custom-img-login-page': "url('/src/Assets/background_login.png')"
+        // This image is used in a split screen layout page type
+        'custom-img-split-screen-page': "url('/src/Assets/background_login.png')"
       },
       colors: {
-        background_buttons_color: '#0047FF',
-        background_color: "#000000",
+        background_button_color: '#0047FF',
+        background_color: '#000823',
+
+        // Plan colors
         bronze_color: '#C99D47',
         silver_color: '#E4F5FF',
         gold_color: '#FFF2AF',
-        white_transparent: "rgba(200,200,200,0.5)",
-        black: '#000000',
-        white: '#ffffff',
-        white_transparent_full: "rgba(200,200,200,0.1)",
-        contect_bg_color: '#000823',
+
+
         header_color_background: '#000D37',
         content_bg_darker_color: 'rgba(24,17,40,0.3)',
         accent_color: '#4FFFEA',
-        login_background_color: '#091336',
+        // The color for the login/register/FAQ pages. 
+        // This color is used in a split screen layout page type.
+        split_screen_layout_background_color: '#091336', 
+
+        // Base colors
         green : 'rgb(0,150,0)',
-        red : 'rgb(255,0,0)'
+        red : 'rgb(255,0,0)',
+        black: '#000000',
+        white: '#ffffff',
+        white_transparent: "rgba(200,200,200,0.5)",
+        white_transparent_full: "rgba(200,200,200,0.1)"
       }
     },
   },
