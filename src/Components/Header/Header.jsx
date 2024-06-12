@@ -23,7 +23,7 @@ const Header = () => {
             />
         </div>
         <div className='Header_links flex items-center space-x-s pl-s'>
-            <div><span className='cursor-pointer'>FAQ</span></div>
+            <div><span className='cursor-pointer'onClick={functions.go_to_FAQ_page}>FAQ</span></div>
             <div><span className='cursor-pointer'>Support</span></div>
             <div><span className='cursor-pointer' onClick={handlePlanMouseDown}>Plans</span></div>
         </div>
