@@ -13,8 +13,15 @@ import PolicyIMG from '../../Assets/Policy.png';
 import SupportIMG from '../../Assets/SupportTeam.png';
 import FQAIMG from '../../Assets/FAQHelp.png';
 import MobileAPPIMG from '../../Assets/MobileSSH.png';
+
+
+import {footer_functions} from './footer.js';
+
+
 const Footer = () => {
-  return (
+
+    const functions = footer_functions();
+    return (
     <div className='Footer flex px-m text-white pb-m mt-x2l'>
         <div className='contact_us w-full'>
             <h2 className='title text-center mb-s text-lg'> Contact Us</h2>
@@ -47,7 +54,7 @@ const Footer = () => {
                             <img style = {{width:'16px', height:'16px'}} src = {PhoneIMG}></img>
                             <p className = "ml-5 text-sm">(+40) 743927416</p>
                         </div>
-                   </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -86,16 +93,16 @@ const Footer = () => {
                             <img style = {{width:'16px', height:'16px'}} src = {SupportIMG}></img>
                             <p className = "ml-5 text-sm">Support Team</p>
                         </div>
-                        <div className='flex mt-pc1 hover:text-white cursor-pointer'>
+                        <div className='flex mt-pc1 hover:text-white cursor-pointer' onClick={functions.go_to_FAQ_page}>
                             <img style = {{width:'16px', height:'16px'}} src = {FQAIMG}></img>
                             <p className = "ml-5 text-sm">FAQ Page</p>
                         </div>
-                   </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div> 
-  )
+    )
 }
 
 export default Footer;
