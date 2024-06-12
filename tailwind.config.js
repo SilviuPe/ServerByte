@@ -69,10 +69,13 @@ module.exports = {
         silver_color: '#E4F5FF',
         gold_color: '#FFF2AF',
 
-
+        // Different colors
         header_color_background: '#000D37',
         content_bg_darker_color: 'rgba(24,17,40,0.3)',
         accent_color: '#4FFFEA',
+        FAQ_question_bg_color : '#0E1E56',
+
+
         // The color for the login/register/FAQ pages. 
         // This color is used in a split screen layout page type.
         split_screen_layout_background_color: '#091336', 
@@ -82,9 +85,15 @@ module.exports = {
         red : 'rgb(255,0,0)',
         black: '#000000',
         white: '#ffffff',
-        white_transparent: "rgba(200,200,200,0.5)",
+        white_transparent: "rgba(200,200,200,0.8)",
         white_transparent_full: "rgba(200,200,200,0.1)"
       }
+    },
+  },
+  variants: {
+    extend: {
+      height: ['responsive', 'hover', 'focus'],
+      opacity: ['responsive', 'hover', 'focus'],
     },
   },
   plugins: [],
