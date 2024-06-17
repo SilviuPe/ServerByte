@@ -44,14 +44,13 @@ module.exports = {
       boxShadow: {
         '2xl-colored-fade': '2px 2px 10px 0px rgb(79,255,234)',
         '2xl-colored-bright' : '4px 4px 20px 5px rgb(79,255,234)',
-        '2xl-colored-bronze-plan' : '0px 0px 40px 0px #C99D47',
-        '2xl-colored-silver-plan' : '0px 0px 40px 0px #E4F5FF',
-        '2xl-colored-gold-plan' : '0px 0px 40px 0px #FFF2AF',
+
+
+        '2xl-colored-plan' : '0px 0px 40px 0px rgba(82, 0, 255,0.8)',
       
-      
-        '2xl-colored-bronze-plan-fade' : '0px 0px 10px 0px #C99D47',
-        '2xl-colored-silver-plan-fade' : '0px 0px 10px 0px #E4F5FF',
-        '2xl-colored-gold-plan-fade' : '0px 0px 10px 0px #FFF2AF'
+
+        
+        '2xl-colored-plan-fade' : '0px 0px 10px 0px rgba(82, 0, 255,0.8)',
       },
       transitionProperty: {
         'h': 'height'
@@ -68,9 +67,14 @@ module.exports = {
         background_color: '#000823',
 
         // Plan colors
-        bronze_color: '#C99D47',
-        silver_color: '#E4F5FF',
-        gold_color: '#FFF2AF',
+        from_plan_color : 'rgba(26, 4, 112, 0.5)',
+        to_plan_color : 'rgba(55, 39, 119, 0.5)',
+
+        from_custom_plan_button_color : 'rgb(26, 4, 112)',
+        to_custom_plan_button_color : 'rgb(55, 39, 119)',
+
+        from_title_plan_color: '#0A104A',
+        to_title_plan_color: '#4C007B',
 
         // Different colors
         header_color_background: '#000D37',

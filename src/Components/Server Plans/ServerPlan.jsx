@@ -75,11 +75,9 @@ const Dropdown = () => {
                             </div> 
                     <div className='CustomPlan_button_container flex mx-x3l mt-s pb-s items-center justify-center text-white text-base'>
                         <button style={{
-                            borderTopLeftRadius: '1rem',
-                            borderTopRightRadius: '1rem',
                             borderBottomRightRadius: '2rem',
                             borderBottomLeftRadius: '2rem' }} 
-                            className='flex bg-background_button_color px-s py-1'
+                            className='flex bg-gradient-to-b from-from_custom_plan_button_color to-to_custom_plan_button_color px-s py-2'
                             onClick={toggleDropdown}
                         > { isOpen ? <> &uarr; </> : <>Custom Plan &darr;</> }</button>
                     </div>   
@@ -138,17 +136,18 @@ const ServerPlan = () => {
   return (
     <div className="ServerPlan_main_container font-normal text-xl flex-1 mt-s pt-x bg-contect_bg_color" id = "ServerPlan_CONTAINER"> 
         <div className='ServerPlan_title_container items-center justify-center mt-xl mb-xl'>
-            <h2 className={`text-center font-bold text-4xl text-white  opacity-${opacity}`} style={{transition: 'opacity 2s'}}>Standard Server Plans</h2>
+            <h2 className={`text-center font-bold text-4xl text-white  opacity-${opacity}`} style={{transition: 'opacity 2s'}}>Virtual Private Server Plans</h2>
         </div>
         <div className="ServerPlans flex space-x-x items-center justify-center px-s mb-m"
              style = {{minHeight: `${minimumHeight}px`}}>
             <div 
                 id = "bronze_plan"
-                className={`cursor-pointer bg-content_bg_darker_color  text-bronze_color p-s rounded-lg 
-                            transition-all transition-1000 ${selectedPlan.bronze ? 'shadow-2xl-colored-bronze-plan p-xl' : 'shadow-2xl-colored-bronze-plan-fade'}`} 
-                 onClick = {() => {plan_functions.select_plan(setSelectedPlan,'bronze')}}>
-                <div className='title_plan text-center mb-s'> Bronze Plan</div>
-                <div className='configuration space-y-6 px-6 rounded-md border-y border-bronze_color pb-8 pt-s'>
+                className={`cursor-pointer bg-gradient-to-b to-to_plan_color from-from_plan_color text-white pb-s
+                            transition-all transition-1000 ${selectedPlan.bronze ? 'shadow-2xl-colored-plan opacity-100' : 'shadow-2xl-colored-plan-fade opacity-60'}`} 
+                 onClick = {() => {plan_functions.select_plan(setSelectedPlan,'bronze')}}
+                 style = {{ borderRadius: 20}}>
+                <div className='title_plan text-start mb-s bg-gradient-to-b from-from_title_plan_color to-to_title_plan_color p-x' style = {{borderBottomRightRadius: 100, borderTopLeftRadius:20, borderTopRightRadius: 20}}> Entry Plan</div>
+                <div className={`configuration space-y-6 px-6 rounded-md border-y border-bronze_color pb-8 pt-s mx-s transition-all transition-500 ${selectedPlan.bronze ? 'mx-xl my-x' : ''}`}>
                     <div className='cpu'>vCPU: x1</div>
                     <div className='memory'>Memory: 1 GB</div>
                     <div className='storage'>Storage: NVMe - SSD 256 GB</div>
@@ -160,34 +159,36 @@ const ServerPlan = () => {
             <div className='line_separator'></div>
             <div 
                 id = "silver_plan"
-                className={`cursor-pointer bg-content_bg_darker_color text-silver_color p-s rounded-lg 
-                             transition-all transition-1000 ${selectedPlan.silver ? 'shadow-2xl-colored-silver-plan p-xl' : 'shadow-2xl-colored-silver-plan-fade'}`} 
-                onClick = {() => {plan_functions.select_plan(setSelectedPlan,'silver')}}>
-                <div className='title_plan text-center mb-s'> Silver Plan</div>
-                <div className='configuration space-y-6 px-6 rounded-md border-y border-silver_color pb-8 pt-s '>
-                    <div className='cpu'>vCPU: x2</div>
+                className={`cursor-pointer bg-gradient-to-b to-to_plan_color from-from_plan_color text-white rounded-lg pb-s
+                            transition-all transition-1000 ${selectedPlan.silver ? 'shadow-2xl-colored-plan opacity-100' : 'shadow-2xl-colored-plan-fade opacity-60'}`} 
+                 onClick = {() => {plan_functions.select_plan(setSelectedPlan,'silver')}}
+                 style = {{ borderRadius: 20}}>
+                <div className='title_plan text-start mb-s bg-gradient-to-b from-from_title_plan_color to-to_title_plan_color p-x' style = {{borderBottomRightRadius: 100, borderTopLeftRadius:20, borderTopRightRadius: 20}}> Standard Plan</div>
+                <div className={`configuration space-y-6 px-6 rounded-md border-y border-bronze_color pb-8 pt-s mx-s transition-all transition-500 ${selectedPlan.silver ? 'mx-xl my-x' : ''}`}>
+                    <div className='cpu'>vCPU: x4</div>
                     <div className='memory'>Memory: 4 GB</div>
-                    <div className='storage'>Storage: NVMe - SSD 500 GB</div>
-                    <div className='network'>Network Bandwidth: 1 Gbps</div>
+                    <div className='storage'>Storage: NVMe - SSD 50 GB</div>
+                    <div className='network'>Network Bandwidth: 400 Mbps</div>
                     <div className='os'>OS: Ubuntu (last version)</div>
                 </div>
-                <div className='pl-s pt-6 text-center mt-6'> <p>Price: <b className='font-bold'>49.99$ / month</b></p></div>
+                <div className='pl-s pt-6 text-center mt-6'> <p>Price: <b className='font-bold text-2'>6.99$ / month</b></p></div>
             </div>
             <div className='line_separator'></div>
             <div 
                 id = "gold_plan"
-                className={`cursor-pointer bg-content_bg_darker_color text-gold_color p-s rounded-lg  
-                             transition-all transition-1000 ${selectedPlan.gold ? 'shadow-2xl-colored-gold-plan p-xl' : 'shadow-2xl-colored-gold-plan-fade'}`} 
-                 onClick = {() => {plan_functions.select_plan(setSelectedPlan,'gold')}}>
-                <div className='title_plan text-center mb-s'> Gold Plan</div>
-                <div className='configuration space-y-6 px-6 rounded-md border-y border-gold_color pb-8 pt-s'>
-                    <div className='cpu'>vCPU: x4</div>
+                className={`cursor-pointer bg-gradient-to-b to-to_plan_color from-from_plan_color text-white rounded-lg pb-s
+                            transition-all transition-1000 ${selectedPlan.gold ? 'shadow-2xl-colored-plan opacity-100' : 'shadow-2xl-colored-plan-fade opacity-60'}`} 
+                 onClick = {() => {plan_functions.select_plan(setSelectedPlan,'gold')}}
+                 style = {{ borderRadius: 20}}>
+                <div className='title_plan text-start mb-s bg-gradient-to-b from-from_title_plan_color to-to_title_plan_color p-x' style = {{borderBottomRightRadius: 100, borderTopLeftRadius:20, borderTopRightRadius: 20}}> Premium Plan</div>
+                <div className={`configuration space-y-6 px-6 rounded-md border-y border-bronze_color pb-8 pt-s mx-s transition-all transition-500 ${selectedPlan.gold ? 'mx-xl my-x' : ''}`}>
+                    <div className='cpu'>vCPU: x8</div>
                     <div className='memory'>Memory: 8 GB</div>
-                    <div className='storage'>Storage: NVMe - SSD 1 TB</div>
-                    <div className='network'>Network Bandwidth: 5 Gbps</div>
+                    <div className='storage'>Storage: NVMe - SSD 100 GB</div>
+                    <div className='network'>Network Bandwidth: 1 Gbps</div>
                     <div className='os'>OS: Ubuntu (last version)</div>
                 </div>
-                <div className='pl-s pt-6 text-center mt-6'> <p>Price: <b className='font-bold text-2'>199.99$ / month</b></p></div>
+                <div className='pl-s pt-6 text-center mt-6'> <p>Price: <b className='font-bold text-2'>9.99$ / month</b></p></div>
             </div>
         </div>
         <Dropdown/> 
