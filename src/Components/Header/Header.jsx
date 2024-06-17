@@ -6,10 +6,6 @@ const Header = () => {
 
     const functions = Header_Functions('HEADER');
 
-    const handlePlanMouseDown = () => {
-        functions.scroll_to_specific_component('ServerPlan_CONTAINER');
-    }
-
     return (
     <div className='Header_body flex text-white bg-contect_bg_color px-s pt-3' id = 'HEADER'>
         <div className='Header_logo pl-s' style = {{paddingTop: 30, paddingBottom: 30,paddingRight:10, paddingLeft:30,}}>
@@ -25,7 +21,7 @@ const Header = () => {
         <div className='Header_links flex items-center space-x-s pl-s'>
             <div><span className='cursor-pointer'onClick={functions.go_to_FAQ_page}>FAQ</span></div>
             <div><span className='cursor-pointer'>Support</span></div>
-            <div><span className='cursor-pointer' onClick={handlePlanMouseDown}>Plans</span></div>
+            <div><span className='cursor-pointer' onClick={functions.go_to_PLAN_page}>Plans</span></div>
         </div>
 
         <div className='Header_options flex items-center space-x-8 ml-auto pr-s'>
