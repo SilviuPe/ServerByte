@@ -1,0 +1,17 @@
+[
+    {
+        "id" : 1,
+        "question" : "What is a VPS?",
+        "answer" : "What is a virtual private server (VPS)? A virtual private server is an isolated environment created on a physical server using virtualisation technology. This solution offers all the advantages of a standard server, with allocated resources and full admin access."
+    },
+    {
+        "id" : 2,
+        "question" : "How to connect to a VPS?",
+        "answer" : "To connect to a VPS, use the SSH protocol on port 22. Open a terminal or SSH client, and enter the command ssh username@ip_address. Replace username with your VPS username (e.g., 'root') and ip_address with the server's IP address. Authenticate using the password or SSH key."
+    },
+    {
+        "id" : 3,
+        "question" : "What is our SSH Mobile?",
+        "answer" : "The SSH Mobile feature is our mobile application which allow you to order a new server and access it via SSH protocol. This way you can control your server even if you are out of your desk."
+    }
+]
