@@ -2,6 +2,9 @@
 module.exports = {
   purge: ['./src/**/*.{js,jsx,ts,tsx}', './public/index.html', './src/App.js'],
   darkMode: false,
+  plugins: [
+    require('tailwind-scrollbar')
+  ],
   theme: {
     spacing: {
       
