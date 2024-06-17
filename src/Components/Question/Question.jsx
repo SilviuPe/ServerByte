@@ -24,7 +24,7 @@ const Question = ({question,answer}) => {
     return (
         <div className='w-pc8 py-2'>
             <div onClick={handle_mouse_down} className='Question bg-FAQ_question_bg_color px-6 rounded rounded-xl mb-4 cursor-pointer'>
-                <h1 className="text-white_transparent text-base font-medium">
+                <h1 className={`text-base font-medium ${opened ? "text-white" : "text-white_transparent"}`}>
                     { 
                         opened 
                         ? <span className='font-bold'> - </span> 
