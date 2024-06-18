@@ -156,7 +156,14 @@ const ServerPlan = () => {
                             <div className='network'>Network Bandwidth: 100 Mbps</div>
                             <div className='os'>OS: Ubuntu (last version)</div>
                         </div>
-                        <div className='pl-s pt-6 text-center mt-6'> <p>Price: <b className='font-bold text-2'>4.99$ / month</b></p></div>
+                        <div className='pl-l pt-6 text-center mt-6 grid place-items-center'>
+                            <p>Price: <b className='font-bold text-2'>4.99$ / month</b></p>
+                            <div className='group ml-m mt-8'>
+                                <button className={`px-x rounded rounded-lg text-sm text-center bg-background_button_color
+                                    group-hover:bg-gradient-to-l group-hover:from-to_title_plan_color group-hover:to-from_title_plan_color
+                                    ${selectedPlan.bronze ? 'h-auto' : 'hidden h-0'}`}>continue</button>
+                            </div>    
+                        </div>
                     </div>
                     <div className='line_separator'></div>
                     <div 
@@ -173,7 +180,14 @@ const ServerPlan = () => {
                             <div className='network'>Network Bandwidth: 400 Mbps</div>
                             <div className='os'>OS: Ubuntu (last version)</div>
                         </div>
-                        <div className='pl-s pt-6 text-center mt-6'> <p>Price: <b className='font-bold text-2'>6.99$ / month</b></p></div>
+                        <div className='pl-l pt-6 text-center mt-6 grid place-items-center'>
+                            <p>Price: <b className='font-bold text-2'>6.99$ / month</b></p>
+                            <div className='group ml-m mt-8'>
+                                <button className={`px-x rounded rounded-lg text-sm text-center bg-background_button_color
+                                    group-hover:bg-gradient-to-l group-hover:from-to_title_plan_color group-hover:to-from_title_plan_color
+                                    ${selectedPlan.silver ? 'h-auto' : 'hidden h-0'}`}>continue</button>
+                            </div>    
+                        </div>
                     </div>
                     <div className='line_separator'></div>
                     <div 
@@ -190,7 +204,14 @@ const ServerPlan = () => {
                             <div className='network'>Network Bandwidth: 1 Gbps</div>
                             <div className='os'>OS: Ubuntu (last version)</div>
                         </div>
-                        <div className='pl-s pt-6 text-center mt-6'> <p>Price: <b className='font-bold text-2'>9.99$ / month</b></p></div>
+                        <div className='pl-l pt-6 text-center mt-6 grid place-items-center'>
+                            <p>Price: <b className='font-bold text-2'>9.99$ / month</b></p>
+                            <div className='group ml-m mt-8'>
+                                <button className={`px-x rounded rounded-lg text-sm text-center bg-background_button_color
+                                    group-hover:bg-gradient-to-l group-hover:from-to_title_plan_color group-hover:to-from_title_plan_color
+                                    ${selectedPlan.gold ? 'h-auto' : 'hidden h-0'}`}>continue</button>
+                            </div>    
+                        </div>
                     </div>
                 </div>
                 <Dropdown/> 

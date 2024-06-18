@@ -19,7 +19,7 @@ const FAQ = () => {
                         <p className='text-sm mt-6'>Now, you can search in our FAQ section for answers.</p>
                     </div>
                     <div className='introduction_image flex justify-center items-center my-xl'>
-                        <Lottie animationData={animationData} loop = {true} style={{width:200}}/>
+                        <Lottie animationData={animationData} loop = {true} style={{width:300}}/>
                     </div>
                 </div>
                 <div className='bg-custom-img-split-screen-faq-page bg-cover w-full' style = {{height:600}}>

@@ -68,6 +68,7 @@ module.exports = {
       },
       colors: {
         background_button_color: '#0047FF',
+        background_button_color_hovered : '#4C007B',
         background_color: '#000823',
 
         // Plan colors
