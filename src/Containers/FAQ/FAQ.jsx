@@ -13,7 +13,7 @@ const FAQ = () => {
         <div className='Frequently_Asked_Questions_page'>
             <Header/>
             <div className='faq-section flex mx-xl mt-xl h-pc6 rounded rounded-3xl text-white'>
-                <div className='introduction_container bg-split_screen_layout_background_color w-full p-s h-pc6' style = {{height:600}}>
+                <div className='introduction_container bg-gradient-to-b from-[#0B0038] to-[#413B58] w-full p-s h-pc6' style = {{height:600}}>
                     <div className='introduction_text'>
                         <h1 className='font-semibold text-xl'>Have any questions?</h1>
                         <p className='text-sm mt-6'>Now, you can search in our FAQ section for answers.</p>
@@ -22,7 +22,7 @@ const FAQ = () => {
                         <Lottie animationData={animationData} loop = {true} style={{width:200}}/>
                     </div>
                 </div>
-                <div className='bg-custom-img-split-screen-page bg-cover w-full' style = {{height:600}}>
+                <div className='bg-custom-img-split-screen-faq-page bg-cover w-full' style = {{height:600}}>
                     <div className='title mt-s'> 
                         <h1 className='font-bold text-2xl text-center'>Frequently Asked Question</h1>
                     </div>

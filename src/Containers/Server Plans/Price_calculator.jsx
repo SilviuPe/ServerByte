@@ -112,7 +112,7 @@ const Price_calculator = forwardRef((props, ref) => {
         <div className='final_price flex justify-end pr-m'>
             <div>
                 <p className='text-center'>Final price: <b>{price}$</b></p>
-                <button className='payment_button bg-background_button_color px-6 rounded-xl text-sm'>continue with payment</button>
+                <button className='payment_button bg-gradient-to-r from-from_custom_plan_button_color to-to_custom_plan_button_color px-6 rounded-xl text-sm'>continue with payment</button>
             </div>
         </div>
     </div>

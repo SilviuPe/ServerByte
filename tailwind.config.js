@@ -41,6 +41,9 @@ module.exports = {
       pc8 : '80%'
     },
     extend: {
+      height: {
+        '50p' : '50%'
+      },
       boxShadow: {
         '2xl-colored-fade': '2px 2px 10px 0px rgb(79,255,234)',
         '2xl-colored-bright' : '4px 4px 20px 5px rgb(79,255,234)',
@@ -60,7 +63,8 @@ module.exports = {
       },
       backgroundImage: {
         // This image is used in a split screen layout page type
-        'custom-img-split-screen-page': "url('/src/Assets/background_login.png')"
+        'custom-img-split-screen-page': "url('/src/Assets/background_login.png')",
+        'custom-img-split-screen-faq-page' : "url(/src/Assets/FAQ_bg.png)"
       },
       colors: {
         background_button_color: '#0047FF',
