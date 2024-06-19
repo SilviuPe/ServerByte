@@ -107,7 +107,7 @@ const ServerPlan = () => {
     useEffect(() => {
         const timer_silver = setTimeout(() => {
             setPlansOpacity([100,0,0])
-        }, 1000)
+        }, 500)
         return () => clearTimeout(timer_silver);
     },[])
 
@@ -115,7 +115,7 @@ const ServerPlan = () => {
     useEffect(() => {
         const timer_silver = setTimeout(() => {
             setPlansOpacity([100,100,0])
-        }, 1500)
+        }, 900)
         return () => clearTimeout(timer_silver);
     },[])
 
@@ -123,7 +123,7 @@ const ServerPlan = () => {
     useEffect(() => {
         const timer_gold = setTimeout(() => {
             setPlansOpacity([100,100,100])
-        }, 1900)
+        }, 1200)
         return () => clearTimeout(timer_gold);
     },[])
 
