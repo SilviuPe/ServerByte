@@ -144,8 +144,8 @@ const ServerPlan = () => {
                         style = {{minHeight: `${minimumHeight}px`}}>
                     <div 
                         id = "bronze_plan"
-                        className={`cursor-pointer bg-gradient-to-b to-to_plan_color from-from_plan_color text-white pb-s
-                                    transition-all transition-1000 ${selectedPlan.bronze ? 'shadow-2xl-colored-plan opacity-100' : 'shadow-2xl-colored-plan-fade opacity-60'}`} 
+                        className={`cursor-pointer bg-gradient-to-b to-to_plan_color from-from_plan_color text-white pb-s opacity-${plansOpacity[0]}
+                                    transition-all duration-500 ${ plansOpacity[0] ? selectedPlan.bronze ? 'shadow-2xl-colored-plan' : "shadow-2xl-colored-plan-fade opacity-60" : ''}`} 
                             onClick = {() => {plan_functions.select_plan(setSelectedPlan,'bronze')}}
                             style = {{ borderRadius: 20}}>
                         <div className='title_plan text-start mb-s bg-gradient-to-b from-from_title_plan_color to-to_title_plan_color p-x' style = {{borderBottomRightRadius: 100, borderTopLeftRadius:20, borderTopRightRadius: 20}}> Entry Plan</div>
@@ -161,15 +161,15 @@ const ServerPlan = () => {
                             <div className='group ml-m mt-8'>
                                 <button className={`px-x rounded rounded-lg text-sm text-center bg-background_button_color
                                     group-hover:bg-gradient-to-l group-hover:from-to_title_plan_color group-hover:to-from_title_plan_color
-                                    ${selectedPlan.bronze ? 'h-auto' : 'hidden h-0'}`}>continue</button>
+                                    transition-all duration-500 ease-in-out ${selectedPlan.bronze ? 'h-auto opacity-100' : 'h-0 opacity-0'}`}>continue</button>
                             </div>    
                         </div>
                     </div>
                     <div className='line_separator'></div>
                     <div 
                         id = "silver_plan"
-                        className={`cursor-pointer bg-gradient-to-b to-to_plan_color from-from_plan_color text-white rounded-lg pb-s
-                                    transition-all transition-1000 ${selectedPlan.silver ? 'shadow-2xl-colored-plan opacity-100' : 'shadow-2xl-colored-plan-fade opacity-60'}`} 
+                        className={`cursor-pointer bg-gradient-to-b to-to_plan_color from-from_plan_color text-white rounded-lg pb-s opacity-${plansOpacity[1]}
+                                    transition-all duration-500 ${ plansOpacity[1] ? selectedPlan.silver ? 'shadow-2xl-colored-plan' : "shadow-2xl-colored-plan-fade opacity-60" : ''}`} 
                             onClick = {() => {plan_functions.select_plan(setSelectedPlan,'silver')}}
                             style = {{ borderRadius: 20}}>
                         <div className='title_plan text-start mb-s bg-gradient-to-b from-from_title_plan_color to-to_title_plan_color p-x' style = {{borderBottomRightRadius: 100, borderTopLeftRadius:20, borderTopRightRadius: 20}}> Standard Plan</div>
@@ -185,15 +185,15 @@ const ServerPlan = () => {
                             <div className='group ml-m mt-8'>
                                 <button className={`px-x rounded rounded-lg text-sm text-center bg-background_button_color
                                     group-hover:bg-gradient-to-l group-hover:from-to_title_plan_color group-hover:to-from_title_plan_color
-                                    ${selectedPlan.silver ? 'h-auto' : 'hidden h-0'}`}>continue</button>
+                                    transition-all duration-500 ease-in-out ${selectedPlan.silver ? 'h-auto opacity-100' : 'h-0 opacity-0'}`}>continue</button>
                             </div>    
                         </div>
                     </div>
                     <div className='line_separator'></div>
                     <div 
                         id = "gold_plan"
-                        className={`cursor-pointer bg-gradient-to-b to-to_plan_color from-from_plan_color text-white rounded-lg pb-s
-                                    transition-all transition-1000 ${selectedPlan.gold ? 'shadow-2xl-colored-plan opacity-100' : 'shadow-2xl-colored-plan-fade opacity-60'}`} 
+                        className={`cursor-pointer bg-gradient-to-b to-to_plan_color from-from_plan_color text-white rounded-lg pb-s opacity-${plansOpacity[2]}
+                        transition-all duration-500 ${ plansOpacity[2] ? selectedPlan.gold ? 'shadow-2xl-colored-plan' : "shadow-2xl-colored-plan-fade opacity-60" : ''}`} 
                             onClick = {() => {plan_functions.select_plan(setSelectedPlan,'gold')}}
                             style = {{ borderRadius: 20}}>
                         <div className='title_plan text-start mb-s bg-gradient-to-b from-from_title_plan_color to-to_title_plan_color p-x' style = {{borderBottomRightRadius: 100, borderTopLeftRadius:20, borderTopRightRadius: 20}}> Premium Plan</div>
@@ -209,7 +209,7 @@ const ServerPlan = () => {
                             <div className='group ml-m mt-8'>
                                 <button className={`px-x rounded rounded-lg text-sm text-center bg-background_button_color
                                     group-hover:bg-gradient-to-l group-hover:from-to_title_plan_color group-hover:to-from_title_plan_color
-                                    ${selectedPlan.gold ? 'h-auto' : 'hidden h-0'}`}>continue</button>
+                                    transition-all duration-500 ease-in-out ${selectedPlan.gold ? 'h-auto opacity-100' : 'h-0 opacity-0'}`}>continue</button>
                             </div>    
                         </div>
                     </div>
