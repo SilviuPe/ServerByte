@@ -44,7 +44,7 @@ const Storage_functions = (barRefference) => {
         let barRect = bar.getBoundingClientRect();
         const difference_between_CPU = barRect.width / 6;
         const position = event.clientX - barRect.left;
-        let pos = calculate_horizontal_position(difference_between_CPU, position,6)
+        let pos = calculate_horizontal_position(difference_between_CPU, position,5)
         component_count_callback(pos.count)
         point_position_callback(pos.coords)
         mouse_status_callback(false);
@@ -77,12 +77,12 @@ export const calculate_horizontal_position = (difference, actual_position, max_p
     
 
 
-    for( let i = 0; i < max_points; i++) {
+    for( let i = 0; i <= max_points; i++) {
         let pozitive_number = Math.abs(actual_position - (i * difference));
         
         if (pozitive_number < minimum ) {
             minimum = actual_position - (i * difference);
-            coords = i * difference;
+            coords = i === 0 ? i * difference : i * difference - 10;
             count = i+1;
         }
     }

@@ -18,12 +18,12 @@ const SelecionBar_Storage = ({callback}) => {
     const [componentCount, setComponentCount] = useState(1);
     const [currentStorageHardware, setCurrentStorageHardware] = useState(null);
     const standardStorageUnits = {
-        1 : 128, 
-        2 : 256, 
-        3 : 512,
-        4 : 1024,
-        5 : 1536,
-        6 : 2048
+        1 : 20, 
+        2 : 50, 
+        3 : 100,
+        4 : 120,
+        5 : 150,
+        6 : 200,
     }
 
     const storage_functions = Storage_functions(barRef);
@@ -72,11 +72,9 @@ const SelecionBar_Storage = ({callback}) => {
                     
                     
                     <div className="StorageMemory w-full">
-                        <div><p 
-                            className="text-2"
-                            style = {{fontSize : '12px', fontWeight: '500', marginLeft: `${pointPosition-1}%`}}>
-                                {standardStorageUnits[componentCount]} GB
-                            </p></div>
+                        <div>
+                            <p className="relative text-2"style = {{fontSize : '12px', fontWeight: '500', marginLeft: `${pointPosition-1}%`}}> {standardStorageUnits[componentCount]} GB </p>
+                            </div>
                         <div
                             ref={barRef}
                             onMouseDown = { handle_mouse_down }
