@@ -39,9 +39,18 @@ export const SelectionBar = ({title, type, callback}) => {
             let bar = barReference.current;
             
             let barRect = bar.getBoundingClientRect();
-            const difference_between_CPU = barRect.width / 8;
-            const actual_position = event.clientX - barRect.left;
-            let pos = calculate_horizontal_position(difference_between_CPU, actual_position,8);
+
+            // for the CPU only multiple of 2 is available ( eg. 2 vCPU , 4 vCPU, 8 vCPU)
+            if (type === "cpu") {
+                const difference_between_CPU = barRect.width / 3;
+                const actual_position = event.clientX - barRect.left;
+                var pos = calculate_horizontal_position(difference_between_CPU, actual_position,3, 'cpu');
+            }
+            else {
+                const difference_between_CPU = barRect.width / 9;
+                const actual_position = event.clientX - barRect.left;
+                var pos = calculate_horizontal_position(difference_between_CPU, actual_position,9);
+            }
             setComponentCount(pos.count);
             setPointPosition(pos.coords);
         }
@@ -75,9 +84,9 @@ export const SelectionBar = ({title, type, callback}) => {
                     onMouseUp = { handleMouseUp }
                     onMouseMove = { HandleMouseMovement }
                     onMouseLeave= { handleMouseUp }
-                    className='SelectionBar bg-white_transparent flex w-full h-7 rounded-full shadow-md cursor-pointer  items-center pl-2'>
+                    className='SelectionBar bg-white_transparent flex w-full h-7 rounded-full shadow-md cursor-pointer  items-center pl-2 mr-x'>
                     <div 
-                        className = "bg-cyan-500 text-white rounded-full h-full"
+                        className = "bg-cyan-500 text-white rounded-full h-full inline whitespace-nowrap"
                         style={{ borderRadius: '50%', width: '10px', height: '10px', marginLeft: `${pointPosition}%`}}> </div>
                 </div>
             </div>
