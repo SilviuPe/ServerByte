@@ -18,12 +18,10 @@ const SelecionBar_Storage = ({callback}) => {
     const [componentCount, setComponentCount] = useState(1);
     const [currentStorageHardware, setCurrentStorageHardware] = useState(null);
     const standardStorageUnits = {
-        1 : 20, 
-        2 : 50, 
-        3 : 100,
-        4 : 120,
-        5 : 150,
-        6 : 200,
+        1 : 50, 
+        2 : 100, 
+        3 : 250,
+        4 : 500
     }
 
     const storage_functions = Storage_functions(barRef);
@@ -72,16 +70,16 @@ const SelecionBar_Storage = ({callback}) => {
                     
                     
                     <div className="StorageMemory w-full">
-                        <div>
+                        <div className='mr-s'>
                             <p className="relative text-2"style = {{fontSize : '12px', fontWeight: '500', marginLeft: `${pointPosition-1}%`}}> {standardStorageUnits[componentCount]} GB </p>
-                            </div>
+                        </div>
                         <div
                             ref={barRef}
                             onMouseDown = { handle_mouse_down }
                             onMouseMove = { handle_mouse_movement }
                             onMouseLeave = { handle_mouse_up }
                             onMouseUp = { handle_mouse_up } 
-                            className = "StorageMemory bg-white_transparent flex w-full h-7  rounded-full shadow-md cursor-pointer  items-center pl-2">
+                            className = "StorageMemory bg-white_transparent flex w-auto h-7  rounded-full shadow-md cursor-pointer  items-center pl-2 mr-s">
                             <div 
                                 className = "bg-cyan-500 text-white rounded-full h-full"
                                 style={{ borderRadius: '50%', width: '10px', height: '10px', marginLeft: `${pointPosition}%`}}> 

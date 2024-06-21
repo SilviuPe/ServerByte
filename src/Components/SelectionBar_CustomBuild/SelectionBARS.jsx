@@ -11,6 +11,21 @@ export const SelectionBar = ({title, type, callback}) => {
         ram : ' GB',
     }
 
+    const cpu_count = {
+        1 : 2,
+        2 : 4,
+        3 : 8,
+        4 : 16,
+        5 : 24
+    }
+
+    const ram_count = {
+        1 : 2,
+        2 : 4,
+        3 : 8,
+        4 : 16,
+        5 : 32
+    }
 
     const [mouseDown, SetMouseDown] = useState(false);
     const barReference = useRef(null);
@@ -27,8 +42,8 @@ export const SelectionBar = ({title, type, callback}) => {
     }
 
     useEffect(() => {
-        callback(type,componentCount);
-        console.log(type,componentCount);
+        callback(type,type === 'cpu' ? cpu_count[componentCount] : ram_count[componentCount]);
+        console.log(type, type === 'cpu' ? cpu_count[componentCount] : ram_count[componentCount]);
     },[componentCount])
 
     const handleMouseUp = (event) => {
@@ -42,14 +57,14 @@ export const SelectionBar = ({title, type, callback}) => {
 
             // for the CPU only multiple of 2 is available ( eg. 2 vCPU , 4 vCPU, 8 vCPU)
             if (type === "cpu") {
-                const difference_between_CPU = barRect.width / 3;
+                const difference_between_CPU = barRect.width / 4;
                 const actual_position = event.clientX - barRect.left;
-                var pos = calculate_horizontal_position(difference_between_CPU, actual_position,3, 'cpu');
+                var pos = calculate_horizontal_position(difference_between_CPU, actual_position,4, 'cpu');
             }
             else {
-                const difference_between_CPU = barRect.width / 9;
+                const difference_between_CPU = barRect.width / 4;
                 const actual_position = event.clientX - barRect.left;
-                var pos = calculate_horizontal_position(difference_between_CPU, actual_position,9);
+                var pos = calculate_horizontal_position(difference_between_CPU, actual_position,4);
             }
             setComponentCount(pos.count);
             setPointPosition(pos.coords);
@@ -75,8 +90,8 @@ export const SelectionBar = ({title, type, callback}) => {
         <div className='my-4 flex items-center justify-center'>
             <p className='flex-2 w-pc2 pt-6'>{title}</p>
             <div className='flex-1'>
-                <div > 
-                    <p style = {{ fontSize : '12px', fontWeight: '500', marginLeft: `${pointPosition - 1}%`}}>{`${componentCount} ${types[type]}`}</p>
+                <div className="mr-s"> 
+                    <p style = {{ fontSize : '12px', fontWeight: '500', marginLeft: `${pointPosition - 1}%`}}>{`${type === 'cpu' ? cpu_count[componentCount] : ram_count[componentCount]} ${types[type]}`}</p>
                 </div>
                 <div 
                     ref={barReference}
@@ -84,7 +99,7 @@ export const SelectionBar = ({title, type, callback}) => {
                     onMouseUp = { handleMouseUp }
                     onMouseMove = { HandleMouseMovement }
                     onMouseLeave= { handleMouseUp }
-                    className='SelectionBar bg-white_transparent flex w-full h-7 rounded-full shadow-md cursor-pointer  items-center pl-2 mr-x'>
+                    className='SelectionBar bg-white_transparent flex w-auto h-7 rounded-full shadow-md cursor-pointer  items-center  mr-s'>
                     <div 
                         className = "bg-cyan-500 text-white rounded-full h-full inline whitespace-nowrap"
                         style={{ borderRadius: '50%', width: '10px', height: '10px', marginLeft: `${pointPosition}%`}}> </div>

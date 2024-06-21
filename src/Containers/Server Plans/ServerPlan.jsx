@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 
 import  { useState, useEffect, useRef } from 'react';
 import { Plans_functions, scroll_page_down, scroll_page_up } from './ServerPlanFunctions.js';
@@ -58,7 +58,7 @@ const Dropdown = () => {
                             <div className={`Dropdown mt-x text-white rounded-md transition-all duration-700 ease-out ${ isOpen ? 'opacity-100 h-full' : 'opacity-0 h-0'}`}>
                                 <h2 className='dropdown_custom_title font-bold text-center text-2xl'>Customize your configuration</h2>
                                 <div className='configuration_main_container flex mt-s ml-lx mr-xl transition-all duration-700' style={{ maxHeight: isOpen ? '100%' : '0', overflow : 'hidden'}}>
-                                    <div className=' configuration_options flex flex-col justify-center w-full flex-1 pr-x'>
+                                    <div className=' configuration_options flex flex-col justify-center w-full flex-1'>
                                         <div>
                                             <SelectionBar title = "CPUs: " type = 'cpu' callback = {updateConfiguration}/>
                                             <SelectionBar title = "RAM Memory:" type = 'ram' callback = {updateConfiguration}/>
@@ -87,11 +87,13 @@ const Dropdown = () => {
 
 const ServerPlan = () => {
     const [opacity,setOpacity] = useState(0);
-    const [plansOpacity, setPlansOpacity] = useState([0,0,0]); // Plans copacity. Every element refers to a plan opacity in the logical order
+    const [plansOpacity, setPlansOpacity] = useState([0,0,0,0,0]); // Plans copacity. Every element refers to a plan opacity in the logical order
     const [selectedPlan,setSelectedPlan] = useState({
-        bronze : false,
-        silver : true,
-        gold: false
+        entry : false,
+        standard : false,
+        premium : true,
+        platinum : false,
+        diamond : false
     });
     const [minimumHeight, setMinimumHeight] = useState(0);
     const plan_functions = Plans_functions();
@@ -106,7 +108,7 @@ const ServerPlan = () => {
     // Opacity for bronze plan
     useEffect(() => {
         const timer_silver = setTimeout(() => {
-            setPlansOpacity([100,0,0])
+            setPlansOpacity([100,0,0,0,0])
         }, 500)
         return () => clearTimeout(timer_silver);
     },[])
@@ -114,7 +116,7 @@ const ServerPlan = () => {
      // Opacity for silver plan
     useEffect(() => {
         const timer_silver = setTimeout(() => {
-            setPlansOpacity([100,100,0])
+            setPlansOpacity([100,100,0,0,0])
         }, 900)
         return () => clearTimeout(timer_silver);
     },[])
@@ -122,8 +124,20 @@ const ServerPlan = () => {
      // Opacity for gold plan
     useEffect(() => {
         const timer_gold = setTimeout(() => {
-            setPlansOpacity([100,100,100])
+            setPlansOpacity([100,100,100,0,0])
         }, 1200)
+        return () => clearTimeout(timer_gold);
+    },[])
+    useEffect(() => {
+        const timer_gold = setTimeout(() => {
+            setPlansOpacity([100,100,100,100,0])
+        }, 1600)
+        return () => clearTimeout(timer_gold);
+    },[])
+    useEffect(() => {
+        const timer_gold = setTimeout(() => {
+            setPlansOpacity([100,100,100,100,100])
+        }, 2000)
         return () => clearTimeout(timer_gold);
     },[])
 
@@ -143,73 +157,131 @@ const ServerPlan = () => {
                 <div className="ServerPlans flex space-x-x items-center justify-center px-s mb-m"
                         style = {{minHeight: `${minimumHeight}px`}}>
                     <div 
-                        id = "bronze_plan"
-                        className={`cursor-pointer bg-gradient-to-b to-to_plan_color from-from_plan_color text-white pb-s opacity-${plansOpacity[0]}
-                                    transition-all duration-500 ${ plansOpacity[0] ? selectedPlan.bronze ? 'shadow-2xl-colored-plan' : "shadow-2xl-colored-plan-fade opacity-60" : ''}`} 
-                            onClick = {() => {plan_functions.select_plan(setSelectedPlan,'bronze')}}
+                        id = "entry_plan"
+                        className={`cursor-pointer text-base bg-gradient-to-b to-to_plan_color from-from_plan_color text-white rounded-lg ${selectedPlan.entry ? 'pb-x' : 'pb-2'} opacity-${plansOpacity[0]}
+                                    transition-all duration-500 ${ plansOpacity[0] ? selectedPlan.entry ? 'shadow-2xl-colored-plan' : "shadow-2xl-colored-plan-fade opacity-60" : ''}`} 
+                            onClick = {() => {plan_functions.select_plan(setSelectedPlan,'entry')}}
                             style = {{ borderRadius: 20}}>
-                        <div className='title_plan text-start mb-s bg-gradient-to-b from-from_title_plan_color to-to_title_plan_color p-x' style = {{borderBottomRightRadius: 100, borderTopLeftRadius:20, borderTopRightRadius: 20}}> Entry Plan</div>
-                        <div className={`configuration space-y-6 px-6 rounded-md border-y border-bronze_color pb-8 pt-s mx-s transition-all transition-500 ${selectedPlan.bronze ? 'mx-xl my-x' : ''}`}>
-                            <div className='cpu'>vCPU: x1</div>
-                            <div className='memory'>Memory: 1 GB</div>
-                            <div className='storage'>Storage: NVMe - SSD 256 GB</div>
-                            <div className='network'>Network Bandwidth: 100 Mbps</div>
-                            <div className='os'>OS: Ubuntu (last version)</div>
+                        <div className='title_plan text-start mb-s bg-gradient-to-b from-from_title_plan_color to-to_title_plan_color p-8' style = {{borderBottomRightRadius: 100, borderTopLeftRadius:20, borderTopRightRadius: 20}}> Standard Plan</div>
+                        <div className={`transition-all duration-900 ease-in-out ${selectedPlan.entry ? 'px-x' : ''}`}>
+                            <div className={`configuration space-y-6 px-6 rounded-md border-y border-white_transparent pb-8 pt-s mx-x transition-all transition-500 ${selectedPlan.entry ? 'my-x' : ''}`}>
+                                <div className='cpu'>vCPU: x2</div>
+                                <div className='memory'>Memory: 2 GB</div>
+                                <div className='storage'>Storage: NVMe - SSD 50 GB</div>
+                                <div className='network'>Bandwidth: 1 TB</div>
+                                <div className='os'>OS: Ubuntu (last version)</div>
+                            </div>
                         </div>
                         <div className='pl-l pt-6 text-center mt-6 grid place-items-center'>
-                            <p>Price: <b className='font-bold text-2'>4.99$ / month</b></p>
+                            <p>Price: <b className='font-bold text-base'>4.99$ / month</b></p>
                             <div className='group ml-m mt-8'>
-                                <button className={`px-x rounded rounded-lg text-sm text-center bg-background_button_color
+                                <button className={`px-8 mr-6 rounded rounded-lg text-sm text-center bg-background_button_color
                                     group-hover:bg-gradient-to-l group-hover:from-to_title_plan_color group-hover:to-from_title_plan_color
-                                    transition-all duration-500 ease-in-out ${selectedPlan.bronze ? 'h-auto opacity-100' : 'h-0 opacity-0'}`}>continue</button>
+                                    transition-all duration-500 ease-in-out ${selectedPlan.entry ? 'h-auto opacity-100' : 'h-0 opacity-0'}`}>continue</button>
                             </div>    
                         </div>
                     </div>
                     <div className='line_separator'></div>
                     <div 
-                        id = "silver_plan"
-                        className={`cursor-pointer bg-gradient-to-b to-to_plan_color from-from_plan_color text-white rounded-lg pb-s opacity-${plansOpacity[1]}
-                                    transition-all duration-500 ${ plansOpacity[1] ? selectedPlan.silver ? 'shadow-2xl-colored-plan' : "shadow-2xl-colored-plan-fade opacity-60" : ''}`} 
-                            onClick = {() => {plan_functions.select_plan(setSelectedPlan,'silver')}}
+                        id = "standard_plan"
+                        className={`cursor-pointer text-base bg-gradient-to-b to-to_plan_color from-from_plan_color text-white rounded-lg ${selectedPlan.standard ? 'pb-x' : 'pb-2'} opacity-${plansOpacity[1]}
+                                    transition-all duration-500 ${ plansOpacity[1] ? selectedPlan.standard ? 'shadow-2xl-colored-plan' : "shadow-2xl-colored-plan-fade opacity-60" : ''}`} 
+                            onClick = {() => {plan_functions.select_plan(setSelectedPlan,'standard')}}
                             style = {{ borderRadius: 20}}>
-                        <div className='title_plan text-start mb-s bg-gradient-to-b from-from_title_plan_color to-to_title_plan_color p-x' style = {{borderBottomRightRadius: 100, borderTopLeftRadius:20, borderTopRightRadius: 20}}> Standard Plan</div>
-                        <div className={`configuration space-y-6 px-6 rounded-md border-y border-bronze_color pb-8 pt-s mx-s transition-all transition-500 ${selectedPlan.silver ? 'mx-xl my-x' : ''}`}>
-                            <div className='cpu'>vCPU: x4</div>
-                            <div className='memory'>Memory: 4 GB</div>
-                            <div className='storage'>Storage: NVMe - SSD 50 GB</div>
-                            <div className='network'>Network Bandwidth: 400 Mbps</div>
-                            <div className='os'>OS: Ubuntu (last version)</div>
+                        <div className='title_plan text-start mb-s bg-gradient-to-b from-from_title_plan_color to-to_title_plan_color p-8' style = {{borderBottomRightRadius: 100, borderTopLeftRadius:20, borderTopRightRadius: 20}}> Standard Plan</div>
+                        <div className={`transition-all duration-900 ease-in-out ${selectedPlan.standard ? 'px-x' : ''}`}>
+                            <div className={`configuration space-y-6 px-6 rounded-md border-y border-white_transparent pb-8 pt-s mx-x transition-all transition-500 ${selectedPlan.standard ? 'my-x' : ''}`}>
+                                <div className='cpu'>vCPU: x4</div>
+                                <div className='memory'>Memory: 8 GB</div>
+                                <div className='storage'>Storage: NVMe - SSD 100 GB</div>
+                                <div className='network'>Bandwidth: 3 TB</div>
+                                <div className='os'>OS: Ubuntu (last version)</div>
+                            </div>
                         </div>
                         <div className='pl-l pt-6 text-center mt-6 grid place-items-center'>
-                            <p>Price: <b className='font-bold text-2'>6.99$ / month</b></p>
+                            <p>Price: <b className='font-bold text-base'>12.99$ / month</b></p>
                             <div className='group ml-m mt-8'>
-                                <button className={`px-x rounded rounded-lg text-sm text-center bg-background_button_color
+                                <button className={`px-8 mr-6 rounded rounded-lg text-sm text-center bg-background_button_color
                                     group-hover:bg-gradient-to-l group-hover:from-to_title_plan_color group-hover:to-from_title_plan_color
-                                    transition-all duration-500 ease-in-out ${selectedPlan.silver ? 'h-auto opacity-100' : 'h-0 opacity-0'}`}>continue</button>
+                                    transition-all duration-500 ease-in-out ${selectedPlan.standard ? 'h-auto opacity-100' : 'h-0 opacity-0'}`}>continue</button>
                             </div>    
                         </div>
                     </div>
                     <div className='line_separator'></div>
                     <div 
-                        id = "gold_plan"
-                        className={`cursor-pointer bg-gradient-to-b to-to_plan_color from-from_plan_color text-white rounded-lg pb-s opacity-${plansOpacity[2]}
-                        transition-all duration-500 ${ plansOpacity[2] ? selectedPlan.gold ? 'shadow-2xl-colored-plan' : "shadow-2xl-colored-plan-fade opacity-60" : ''}`} 
-                            onClick = {() => {plan_functions.select_plan(setSelectedPlan,'gold')}}
+                        id = "premium_plan"
+                        className={`cursor-pointer text-base bg-gradient-to-b to-to_plan_color from-from_plan_color text-white rounded-lg ${selectedPlan.premium ? 'pb-x' : 'pb-2'} opacity-${plansOpacity[2]}
+                        transition-all duration-500 ${ plansOpacity[2] ? selectedPlan.premium ? 'shadow-2xl-colored-plan' : "shadow-2xl-colored-plan-fade opacity-60" : ''}`} 
+                            onClick = {() => {plan_functions.select_plan(setSelectedPlan,'premium')}}
                             style = {{ borderRadius: 20}}>
-                        <div className='title_plan text-start mb-s bg-gradient-to-b from-from_title_plan_color to-to_title_plan_color p-x' style = {{borderBottomRightRadius: 100, borderTopLeftRadius:20, borderTopRightRadius: 20}}> Premium Plan</div>
-                        <div className={`configuration space-y-6 px-6 rounded-md border-y border-bronze_color pb-8 pt-s mx-s transition-all transition-500 ${selectedPlan.gold ? 'mx-xl my-x' : ''}`}>
-                            <div className='cpu'>vCPU: x8</div>
-                            <div className='memory'>Memory: 8 GB</div>
-                            <div className='storage'>Storage: NVMe - SSD 100 GB</div>
-                            <div className='network'>Network Bandwidth: 1 Gbps</div>
-                            <div className='os'>OS: Ubuntu (last version)</div>
+                        <div className='title_plan text-start mb-s bg-gradient-to-b from-from_title_plan_color to-to_title_plan_color p-8' style = {{borderBottomRightRadius: 100, borderTopLeftRadius:20, borderTopRightRadius: 20}}> Premium Plan</div>
+                        <div className={`transition-all duration-900 ease-in-out ${selectedPlan.premium ? 'px-x' : ''}`}>
+                            <div className={`configuration space-y-6 px-6 rounded-md border-y border-white_transparent pb-8 pt-s mx-x transition-all transition-500 ${selectedPlan.premium ? 'my-x' : ''}`}>
+                                <div className='cpu'>vCPU: x8</div>
+                                <div className='memory'>Memory: 16 GB</div>
+                                <div className='storage'>Storage: NVMe - SSD 250 GB</div>
+                                <div className='network'> Bandwidth: 5 TB</div>
+                                <div className='os'>OS: Ubuntu (last version)</div>
+                            </div>
                         </div>
                         <div className='pl-l pt-6 text-center mt-6 grid place-items-center'>
-                            <p>Price: <b className='font-bold text-2'>9.99$ / month</b></p>
+                            <p>Price: <b className='font-bold text-base'>21.99$ / month</b></p>
                             <div className='group ml-m mt-8'>
-                                <button className={`px-x rounded rounded-lg text-sm text-center bg-background_button_color
+                                <button className={`px-8 mr-6 rounded rounded-lg text-sm text-center bg-background_button_color
                                     group-hover:bg-gradient-to-l group-hover:from-to_title_plan_color group-hover:to-from_title_plan_color
-                                    transition-all duration-500 ease-in-out ${selectedPlan.gold ? 'h-auto opacity-100' : 'h-0 opacity-0'}`}>continue</button>
+                                    transition-all duration-500 ease-in-out ${selectedPlan.premium ? 'h-auto opacity-100' : 'h-0 opacity-0'}`}>continue</button>
+                            </div>    
+                        </div>
+                    </div>
+                    <div className='line_separator'></div>
+                    <div 
+                        id = "platinum_plan"
+                        className={`cursor-pointer text-base bg-gradient-to-b to-to_plan_color from-from_plan_color text-white rounded-lg ${selectedPlan.platinum ? 'pb-x' : 'pb-2'} opacity-${plansOpacity[3]}
+                        transition-all duration-500 ${ plansOpacity[3] ? selectedPlan.platinum ? 'shadow-2xl-colored-plan' : "shadow-2xl-colored-plan-fade opacity-60" : ''}`} 
+                            onClick = {() => {plan_functions.select_plan(setSelectedPlan,'platinum')}}
+                            style = {{ borderRadius: 20}}>
+                        <div className='title_plan text-start mb-s bg-gradient-to-b from-from_title_plan_color to-to_title_plan_color p-8' style = {{borderBottomRightRadius: 100, borderTopLeftRadius:20, borderTopRightRadius: 20}}> Platinum Plan</div>
+                        <div className={`transition-all duration-900 ease-in-out ${selectedPlan.platinum ? 'px-x' : ''}`}>
+                            <div className={`configuration space-y-6 px-6 rounded-md border-y border-white_transparent pb-8 pt-s mx-x transition-all transition-500 ${selectedPlan.platinum ? 'my-x' : ''}`}>
+                                <div className='cpu'>vCPU: x16</div>
+                                <div className='memory'>Memory: 32 GB</div>
+                                <div className='storage'>Storage: NVMe - SSD 500 GB</div>
+                                <div className='network'>Bandwidth: 10 TB</div>
+                                <div className='os'>OS: Ubuntu (last version)</div>
+                            </div>
+                        </div>
+                        <div className='pl-l pt-6 text-center mt-6 grid place-items-center'>
+                            <p>Price: <b className='font-bold text-base'>49.99$ / month</b></p>
+                            <div className='group ml-m mt-8'>
+                                <button className={`px-8 mr-6 rounded rounded-lg text-sm text-center bg-background_button_color
+                                    group-hover:bg-gradient-to-l group-hover:from-to_title_plan_color group-hover:to-from_title_plan_color
+                                    transition-all duration-500 ease-in-out ${selectedPlan.platinum ? 'h-auto opacity-100' : 'h-0 opacity-0'}`}>continue</button>
+                            </div>    
+                        </div>
+                    </div>
+                    <div className='line_separator'></div>
+                    <div 
+                        id = "diamond_plan"
+                        className={`cursor-pointer text-base bg-gradient-to-b to-to_plan_color from-from_plan_color text-white rounded-lg ${selectedPlan.diamond ? 'pb-x' : 'pb-2'} opacity-${plansOpacity[4]}
+                        transition-all duration-500 ${ plansOpacity[4] ? selectedPlan.diamond ? 'shadow-2xl-colored-plan' : "shadow-2xl-colored-plan-fade opacity-60" : ''}`} 
+                            onClick = {() => {plan_functions.select_plan(setSelectedPlan,'diamond')}}
+                            style = {{ borderRadius: 20}}>
+                        <div className='title_plan text-start mb-s bg-gradient-to-b from-from_title_plan_color to-to_title_plan_color p-8' style = {{borderBottomRightRadius: 100, borderTopLeftRadius:20, borderTopRightRadius: 20}}> Diamond Plan</div>
+                        <div className={`transition-all duration-900 ease-in-out ${selectedPlan.diamond ? 'px-x' : ''}`}>
+                            <div className={`configuration space-y-6 px-6 rounded-md border-y border-white_transparent pb-8 pt-s mx-x transition-all transition-500 ${selectedPlan.diamond ? 'my-x' : ''}`}>
+                                <div className='cpu'>vCPU: x24</div>
+                                <div className='memory'>Memory: 32 GB</div>
+                                <div className='storage'>Storage: NVMe - SSD 500 GB</div>
+                                <div className='network'>Bandwidth: Unlimited</div>
+                                <div className='os'>OS: Ubuntu (last version)</div>
+                            </div>
+                        </div>
+                        <div className='pl-l pt-6 text-center mt-6 grid place-items-center'>
+                            <p>Price: <b className='font-bold text-base'>68.99$ / month</b></p>
+                            <div className='group ml-m mt-8'>
+                                <button className={`px-8 mr-6 rounded rounded-lg text-sm text-center bg-background_button_color
+                                    group-hover:bg-gradient-to-l group-hover:from-to_title_plan_color group-hover:to-from_title_plan_color
+                                    transition-all duration-500 ease-in-out ${selectedPlan.diamond ? 'h-auto opacity-100' : 'h-0 opacity-0'}`}>continue</button>
                             </div>    
                         </div>
                     </div>

@@ -83,7 +83,7 @@ const Price_calculator = forwardRef((props, ref) => {
     return (
     <div className='Price_calculator items-center'>
         <div className='title'><h2 className='text-center font-medium mb-x'>Final Server Configuration</h2></div>
-        <div className='final_configuration pl-pc3'>
+        <div className='final_configuration pl-pc2'>
             <div className='CPU flex mb-8'>
                 <img src = {CpuIMG} />
                 <p className='ml-x' style = {{fontSize: '14px'}}> {configuration.cpu} x vCPU (2x{configuration.cpu} threads)</p>

@@ -56,7 +56,7 @@ const Network_selection_bar = ({callback}) => {
         <div className='my-4 flex items-center justify-center'>
             <p className='flex-2 w-pc2 pt-8'>Network Bandwidth:</p>
             <div className='flex-1'>
-                <div> 
+                <div className='mr-s'> 
                     <p className = "mb-4" style = {{ fontSize : '12px', fontWeight: '500', marginLeft: `${pointPosition - 1}%`}}>{componentCount} {sufixUnits}</p>
                 </div>
                 <div 
@@ -65,7 +65,7 @@ const Network_selection_bar = ({callback}) => {
                     onMouseUp = { handleMouseUp }
                     onMouseMove = { handleMouseMovement }
                     onMouseLeave = { handleMouseUp }
-                    className='SelectionBar bg-white_transparent flex w-full h-7 rounded-full shadow-md cursor-pointer  items-center pl-2'>
+                    className='SelectionBar bg-white_transparent flex w-auto h-7 rounded-full shadow-md cursor-pointer  items-center pl-2 mr-s'>
                     <div 
                         className = "bg-cyan-500 text-white rounded-full h-full"
                         style={{ borderRadius: '50%', width: '10px', height: '10px', marginLeft: `${pointPosition}%`}}> </div>

@@ -19,7 +19,7 @@ export const calculate_horizontal_position = (difference, actual_position, max_p
     let new_coords = (100*coords) / (max_points*difference);
     return {
       coords : new_coords,
-      count : type === 'cpu' ? count * 2 : count 
+      count : count 
     }
   }
 
