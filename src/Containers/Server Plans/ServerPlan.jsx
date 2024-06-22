@@ -152,7 +152,7 @@ const ServerPlan = () => {
             <Header/>        
             <div className="ServerPlan_main_container font-normal text-xl flex-1 mt-s pt-x bg-contect_bg_color" id = "ServerPlan_CONTAINER"> 
                 <div className='ServerPlan_title_container items-center justify-center  mb-l'>
-                    <h2 className={`text-center font-bold text-4xl text-white  opacity-${opacity}`} style={{transition: 'opacity 2s'}}>Virtual Private Server Plans</h2>
+                    <h2 className={`text-center font-bold text-4xl text-white  opacity-${opacity}`} style={{transition: 'opacity 2s'}}>VPS Hosting Plans</h2>
                 </div>
                 <div className="ServerPlans flex space-x-x items-center justify-center px-s mb-m"
                         style = {{minHeight: `${minimumHeight}px`}}>
