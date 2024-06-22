@@ -91,7 +91,7 @@ export const SelectionBar = ({title, type, callback}) => {
             <p className='flex-2 w-pc2 pt-6'>{title}</p>
             <div className='flex-1'>
                 <div className="mr-s"> 
-                    <p style = {{ fontSize : '12px', fontWeight: '500', marginLeft: `${pointPosition - 1}%`}}>{`${type === 'cpu' ? cpu_count[componentCount] : ram_count[componentCount]} ${types[type]}`}</p>
+                    <p className = "transition-all duration-50 ease-in-out"style = {{ fontSize : '12px', fontWeight: '500', marginLeft: `${componentCount === 5 ? pointPosition - 4 : pointPosition - 2}%`}}>{`${type === 'cpu' ? cpu_count[componentCount] : ram_count[componentCount]} ${types[type]}`}</p>
                 </div>
                 <div 
                     ref={barReference}
@@ -101,7 +101,7 @@ export const SelectionBar = ({title, type, callback}) => {
                     onMouseLeave= { handleMouseUp }
                     className='SelectionBar bg-white_transparent flex w-auto h-7 rounded-full shadow-md cursor-pointer  items-center  mr-s'>
                     <div 
-                        className = "bg-cyan-500 text-white rounded-full h-full inline whitespace-nowrap"
+                        className = "bg-cyan-500 text-white rounded-full h-full inline whitespace-nowrap transition-all duration-50 ease-in-out"
                         style={{ borderRadius: '50%', width: '10px', height: '10px', marginLeft: `${pointPosition}%`}}> </div>
                 </div>
             </div>

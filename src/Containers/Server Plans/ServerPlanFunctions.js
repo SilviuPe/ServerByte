@@ -29,7 +29,7 @@ export const Price_functions = () => {
           else 
             price += data_prices.Bandwidth.Gbps[configuration.network.memory];
           */
-          return price;
+          return price - 0.01;
           console.log(price)
     }
 

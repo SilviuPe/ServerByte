@@ -60,7 +60,7 @@ const Network_selection_bar = ({callback}) => {
             <p className='flex-2 w-pc2 pt-8'>Traffic:</p>
             <div className='flex-1'>
                 <div className='mr-s'> 
-                    <p className = "mb-4" style = {{ fontSize : '12px', fontWeight: '500', marginLeft: `${componentCount === 5 ? pointPosition - 10 : pointPosition - 1}%`}}>{traffic[componentCount]} TB</p>
+                    <p className = "transition-all duration-50 ease-in-out mb-4" style = {{ fontSize : '12px', fontWeight: '500', marginLeft: `${componentCount === 5 ? pointPosition - 10 : pointPosition - 1}%`}}>{traffic[componentCount]} TB</p>
                 </div> 
                 <div 
                     ref={barRefference}
@@ -70,7 +70,7 @@ const Network_selection_bar = ({callback}) => {
                     onMouseLeave = { handleMouseUp }
                     className='SelectionBar bg-white_transparent flex w-auto h-7 rounded-full shadow-md cursor-pointer  items-center pl-2 mr-s'>
                     <div 
-                        className = "bg-cyan-500 text-white rounded-full h-full"
+                        className = "transition-all duration-50 ease-in-out bg-cyan-500 text-white rounded-full h-full"
                         style={{ borderRadius: '50%', width: '10px', height: '10px', marginLeft: `${pointPosition}%`}}> </div>
                 </div>
             </div>

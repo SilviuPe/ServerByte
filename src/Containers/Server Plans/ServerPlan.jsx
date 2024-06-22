@@ -173,7 +173,7 @@ const ServerPlan = () => {
                             </div>
                         </div>
                         <div className='pl-l pt-6 text-center mt-6 grid place-items-center'>
-                            <p>Price: <b className='font-bold text-base'>4.99$ / month</b></p>
+                            <p>Price: <b className='font-bold text-base'>5.49$ / month</b></p>
                             <div className='group ml-m mt-8'>
                                 <button className={`px-8 mr-6 rounded rounded-lg text-sm text-center bg-background_button_color
                                     group-hover:bg-gradient-to-l group-hover:from-to_title_plan_color group-hover:to-from_title_plan_color
@@ -251,7 +251,7 @@ const ServerPlan = () => {
                             </div>
                         </div>
                         <div className='pl-l pt-6 text-center mt-6 grid place-items-center'>
-                            <p>Price: <b className='font-bold text-base'>49.99$ / month</b></p>
+                            <p>Price: <b className='font-bold text-base'>48.99$ / month</b></p>
                             <div className='group ml-m mt-8'>
                                 <button className={`px-8 mr-6 rounded rounded-lg text-sm text-center bg-background_button_color
                                     group-hover:bg-gradient-to-l group-hover:from-to_title_plan_color group-hover:to-from_title_plan_color
@@ -277,7 +277,7 @@ const ServerPlan = () => {
                             </div>
                         </div>
                         <div className='pl-l pt-6 text-center mt-6 grid place-items-center'>
-                            <p>Price: <b className='font-bold text-base'>68.99$ / month</b></p>
+                            <p>Price: <b className='font-bold text-base'>69.99$ / month</b></p>
                             <div className='group ml-m mt-8'>
                                 <button className={`px-8 mr-6 rounded rounded-lg text-sm text-center bg-background_button_color
                                     group-hover:bg-gradient-to-l group-hover:from-to_title_plan_color group-hover:to-from_title_plan_color

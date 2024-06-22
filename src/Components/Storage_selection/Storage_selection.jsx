@@ -71,7 +71,7 @@ const SelecionBar_Storage = ({callback}) => {
                     
                     <div className="StorageMemory w-full">
                         <div className='mr-s'>
-                            <p className="relative text-2"style = {{fontSize : '12px', fontWeight: '500', marginLeft: `${pointPosition-1}%`}}> {standardStorageUnits[componentCount]} GB </p>
+                            <p className="relative text-2 transition-all duration-50 ease-in-out"style = {{fontSize : '12px', fontWeight: '500', marginLeft: `${componentCount === 4 ? pointPosition-4 : pointPosition-2}%`}}> {standardStorageUnits[componentCount]} GB </p>
                         </div>
                         <div
                             ref={barRef}
@@ -81,7 +81,7 @@ const SelecionBar_Storage = ({callback}) => {
                             onMouseUp = { handle_mouse_up } 
                             className = "StorageMemory bg-white_transparent flex w-auto h-7  rounded-full shadow-md cursor-pointer  items-center pl-2 mr-s">
                             <div 
-                                className = "bg-cyan-500 text-white rounded-full h-full"
+                                className = "transition-all duration-50 ease-in-out bg-cyan-500 text-white rounded-full h-full"
                                 style={{ borderRadius: '50%', width: '10px', height: '10px', marginLeft: `${pointPosition}%`}}> 
                             </div>
                         </div>
