@@ -7,9 +7,16 @@ const Network_selection_bar = ({callback}) => {
     const [pointPosition, setPointPosition] = useState(0); // This is the point position ( in the code this is the distance between start point of the bar and point)
     const [mouseDown, setMouseDown] = useState(false); // mouse button down monitorize 
     const [componentCount, setComponentCount] = useState(100); // component count monitoreize 
-    const [sufixUnits, setSufixUnits] = useState('Mbps'); // The units which will mearuse the network speed.
     const barRefference = useRef(null); // Bar refference
 
+    const [traffic, setTraffic] = useState({
+        1 : 1,
+        2 : 3,
+        3 : 5,
+        4 : 10,
+        5 : 'Unlimited'
+    })
+ 
     // [HANDLE TYPE FUNCTION] when the mouse is down this function is called
     const handleMouseDown = () => {
         setMouseDown(true);
@@ -19,10 +26,9 @@ const Network_selection_bar = ({callback}) => {
     useEffect(() => {
         const details = {
             memory: componentCount,
-            units: sufixUnits
         }
         callback('network', details);
-    },[sufixUnits,componentCount])
+    },[componentCount])
 
 
     const network_functions = Network_Functions(barRefference);
@@ -33,7 +39,7 @@ const Network_selection_bar = ({callback}) => {
      // then call the function from [SelectionBar_functions.js]
     const handleMouseUp = (event) => {
         if (mouseDown) {
-            network_functions.HandleMouseButtonUp(setMouseDown,setSufixUnits,setComponentCount,setPointPosition,event);
+            network_functions.HandleMouseButtonUp(setMouseDown,setComponentCount,setPointPosition,event);
         }
     }
 
@@ -54,11 +60,11 @@ const Network_selection_bar = ({callback}) => {
 
     return (
         <div className='my-4 flex items-center justify-center'>
-            <p className='flex-2 w-pc2 pt-8'>Network Bandwidth:</p>
+            <p className='flex-2 w-pc2 pt-8'>Traffic:</p>
             <div className='flex-1'>
                 <div className='mr-s'> 
-                    <p className = "mb-4" style = {{ fontSize : '12px', fontWeight: '500', marginLeft: `${pointPosition - 1}%`}}>{componentCount} {sufixUnits}</p>
-                </div>
+                    <p className = "mb-4" style = {{ fontSize : '12px', fontWeight: '500', marginLeft: `${componentCount === 5 ? pointPosition - 10 : pointPosition - 1}%`}}>{traffic[componentCount]} TB</p>
+                </div> 
                 <div 
                     ref={barRefference}
                     onMouseDown = { handleMouseDown }
