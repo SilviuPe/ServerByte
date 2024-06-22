@@ -72,7 +72,7 @@ const Footer = () => {
                             <img style = {{width:'16px', height:'16px'}} src = {CustomIMG}></img>
                             <p className = "ml-5 text-sm">Custom VPS </p>
                         </div>
-                        <div className='flex mt-pc1 items-center hover:text-white cursor-pointer'>
+                        <div className='flex mt-pc1 items-center hover:text-white cursor-pointer' onClick = {functions.go_to_PLANS}>
                             <img style = {{width:'16px', height:'16px'}} src = {CloudIMG}></img>
                             <p className = "ml-5 text-sm">VPS Plans</p>
                         </div>
