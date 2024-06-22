@@ -26,10 +26,7 @@ const Price_calculator = forwardRef((props, ref) => {
             memory: 128,
             units: "MB"
         },
-        network: {
-            memory: 100,
-            units: "Mbps"
-        },
+        traffic: 1,
         ip: 4,
         os: 'Windows 10',
         OSimage: WindowsIMG
@@ -98,7 +95,7 @@ const Price_calculator = forwardRef((props, ref) => {
             </div>
             <div className='Network flex mb-8'>
                 <img src = { NetworkIMG }/>
-                <p className='ml-x' style = {{fontSize: '14px'}}> {configuration.network.units === "Gbps" ? <b style = {{fontWeight: 700}}>{configuration.network.memory} {configuration.network.units}</b> : configuration.network.memory + ' ' +configuration.network.units} Network Bandwidth</p>
+                <p className='ml-x' style = {{fontSize: '14px'}}><b>{configuration.traffic} TB</b> Network Traffic</p>
             </div>
             <div className='IP flex mb-8'>
                 <img src = { IpIMG }/>

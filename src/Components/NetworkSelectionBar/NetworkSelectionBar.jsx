@@ -24,10 +24,7 @@ const Network_selection_bar = ({callback}) => {
 
 
     useEffect(() => {
-        const details = {
-            memory: componentCount,
-        }
-        callback('network', details);
+        callback('traffic', traffic[componentCount]);
     },[componentCount])
 
 

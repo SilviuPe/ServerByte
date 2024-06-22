@@ -20,6 +20,7 @@ export const Price_functions = () => {
           let price = 0;
           console.log(configuration);
           price += data_prices.vCPU[configuration.cpu];
+          price += data_prices.Traffic[configuration.traffic];
           price += data_prices.RAM[configuration.ram];
           price += data_prices.Storage.Memory[configuration.storage.memory];
           
