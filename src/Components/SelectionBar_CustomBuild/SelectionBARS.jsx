@@ -91,7 +91,7 @@ export const SelectionBar = ({title, type, callback}) => {
             <p className='flex-2 w-pc2 pt-6'>{title}</p>
             <div className='flex-1'>
                 <div className="mr-s"> 
-                    <p className = "transition-all duration-50 ease-in-out"style = {{ fontSize : '12px', fontWeight: '500', marginLeft: `${componentCount === 5 ? pointPosition - 4 : pointPosition - 2}%`}}>{`${type === 'cpu' ? cpu_count[componentCount] : ram_count[componentCount]} ${types[type]}`}</p>
+                    <p className = "transition-all duration-50 ease-in-out"style = {{ fontSize : '12px', fontWeight: '500', marginLeft: `${componentCount === 5 ? type === 'cpu' ? pointPosition - 8 : pointPosition - 4 : pointPosition - 2}%`}}>{`${type === 'cpu' ? cpu_count[componentCount] : ram_count[componentCount]} ${types[type]}`}</p>
                 </div>
                 <div 
                     ref={barReference}

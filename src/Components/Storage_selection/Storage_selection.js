@@ -82,7 +82,7 @@ export const calculate_horizontal_position = (difference, actual_position, max_p
         
         if (pozitive_number < minimum ) {
             minimum = actual_position - (i * difference);
-            coords = i === 0 ? i * difference : i * difference - 32;
+            coords = i === 0 ? i * difference : i * difference - 15;
             count = i+1;
         }
     }

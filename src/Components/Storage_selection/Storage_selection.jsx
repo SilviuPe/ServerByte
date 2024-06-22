@@ -71,7 +71,7 @@ const SelecionBar_Storage = ({callback}) => {
                     
                     <div className="StorageMemory w-full">
                         <div className='mr-s'>
-                            <p className="relative text-2 transition-all duration-50 ease-in-out"style = {{fontSize : '12px', fontWeight: '500', marginLeft: `${componentCount === 4 ? pointPosition-4 : pointPosition-2}%`}}> {standardStorageUnits[componentCount]} GB </p>
+                            <p className="relative text-2 transition-all duration-50 ease-in-out"style = {{fontSize : '12px', fontWeight: '500', marginLeft: `${componentCount === 4 ? pointPosition-8 : pointPosition-2}%`}}> {standardStorageUnits[componentCount]} GB </p>
                         </div>
                         <div
                             ref={barRef}
