@@ -8,32 +8,8 @@ import BestPricesIMG from '../../Assets/UnbeatablePrices.png';
 import Lottie from 'lottie-react';
 
 
-import supportAnimationData from '../../Assets/supportAnimation.json';
-import mobileAnimationData from '../../Assets/mobileAnimation.json';
-import customAnimationData from '../../Assets/customAnimation.json';
-import affordableAnimationData from '../../Assets/affordableAnimation.json';
-import trafficAnimationData from '../../Assets/trafficAnimation.json';
+import HomePageIMG from '../../Assets/HomepageVPS.png';
 
-const InfoField = ({description_side, animation, description}) => {
-
-    const components = [
-      <div className={`Animation flex-1 w-full flex justify-center ${ description_side === 'r' ? 'pr-x2l' : 'pl-x2l'}`}>
-        <Lottie style = {{width: 300}} animationData={animation} loop={true}/>
-      </div>,
-
-      <div className={`Description flex-1 w-full flex justify-center text-2xl ${ description_side === 'r' ? 'pl-x2l' : 'pr-x2l'}`}>
-        <p className='px-l text-center'>{description}</p>
-      </div>
-    ];
-
-    return (
-      <>
-          <div className='InfoField flex items-center justify-center mt-x2l'>
-              { description_side === 'l' ? components : components.reverse()}
-          </div>
-      </>
-    )
-}
 
 function Mission() {
 
@@ -47,20 +23,74 @@ function Mission() {
     },[])
 
     return (
-    <div className={`Mission_content relative px-m mt-l text-white pt-xl bg-contect_bg_color transition-all duration-1000 ease-in-out transform opacity-${opacity} ${opacity ? 'bottom-0' : 'bottom-[-200px]'}`}>
-      <div className='title mb-l'>
-        <h2 className='font-semibold text-5xl text-center'>Explore Our Services</h2>
+      <div className='Services flex flex-col justify-center items-center text-white mt-xl'>
+        <h1 className='Title text-3xl font-semibold mt-xl mb-xl'>Explore Our Services</h1>
+        <div className='Support flex flex-col justify-center items-center mt-xl text-2xl font-extralight mx-xl'>
+          <div className='Support Points'>
+            <p className='longTitle text-center'><span className='font-normal'>ServerByte</span> offers 24/7 support to ensure continuous acces to professinal assistance, convering 
+            a wide range of tehnical support and operational needs.</p>
+            <div className='ml-m'>
+              <h1 className='Subtitle font-semibold mt-xl'>Tehnical Assistance:</h1>
+              <ul className='SupportList list-disc text-xl ml-m mt-s space-y-6'>
+                <li><span className='font-semibold'>Troubleshooting:</span> Help with performance, connectivity and configuration issues.</li>
+                <li><span className='font-semibold'>Expert solutions:</span> Well-trained professionals in VPS hosting.</li>
+                <li><span className='font-semibold'>Multiple Options:</span> Support via email and phone, catering to user preferences.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div className='Mobile_Access flex flex-col justify-center items-center mt-xl text-2xl font-extralight mx-xl'>
+          <div className='Mobile_Access Points'>
+            <p className='longTitle text-center'><span className='font-normal'>ServerByte</span> offers secure mobile SSH access, allowing you to connect to your servers directly
+                            from your mobile device. This feature provides flexibility for system administrators 
+                            and developers to manage infrastructure tasks on the go.</p>
+            <div className='ml-m'>
+              <h1 className='Subtitle font-semibold mt-xl'>Mobile SSH Access:</h1>
+              <ul className='SupportList list-disc text-xl ml-m mt-s space-y-6'>
+                <li><span className='font-semibold'>Secure Connectivity:</span> Connect to your VPS securely from anywhere, ensuring data protection with robust encryption protocols.</li>
+                <li><span className='font-semibold'>Flexibility and Convenience:</span> Manage server infrastructure without being tied to a desktop, ideal for travel or remote work.</li>
+                <li><span className='font-semibold'>Critical Task Management:</span> Execute commands, monitor performance, and troubleshoot issues in real-time to maintain service reliability.</li>
+                <li><span className='font-semibold'>User-Friendly Interface:</span> Intuitive design for easy navigation of command-line interfaces, simplifying remote management.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div className='Separator-line w-pc8 pb-l' style = {{borderBottom: '2px solid white'}}></div>
+        <div className='Custom-vps text-2xl font-extralight mx-x2l flex flex-col justify-center items-center mt-x2l'>
+          <p className='text-center'><span className='font-semibold'>ServerByte</span> offers customizable VPS builds at affordable prices. Tailor your environment with ease
+          to meet specific requirements, ensuring your setup aligns perfectly with your needs.</p>
+        </div>
+        <div className='grid grid-cols-3 grid-rows-3 gap-8 mt-xl place-items-center text-2xl font-extralight'>
+          <div className='col-start-1 col-end-2 row-start-1 row-span-1' style= {{width:400}}>
+            <p><span className='font-semibold'>High-Performance CPUs:</span> Featuring
+                Intel Xeon v4 processors for
+                superior performance.</p>
+          </div>
+          <div className='col-start-1 col-end-2 row-start-3 row-span-1' style= {{width:400}}>
+            <p><span className='font-bold'>Ample RAM:</span> Options for
+                various RAM capacities
+                to match your workload demands.</p>
+          </div>
+          <div className='col-start-2 col-end-3 row-start-2 row-span-1'>
+            <img src = {HomePageIMG} style= {{width:400}}/>
+          </div>
+          <div className='col-start-3 col-span-1 row-start-1 row-span-1' style= {{width:400}}>
+            <p><span className='font-bold'>Quality Internet Connectivity:</span> High-speed and stable internet connections to 
+            ensure seamless operations.</p>
+          </div>
+          <div className='col-start-3 col-span-1 row-start-3 row-span-1' style= {{width:400}}>
+            <p><span className='font-bold'>Flexible Storage Solutions:</span> SSD 
+            storage options for fast and reliable data access.</p>
+          </div>
+        </div>
+        <div className='Separator-line w-pc7 pb-m' style = {{borderBottom: '2px solid white'}}></div>
+        <div className='Conclusion mx-x2l mt-x2l'>
+          <p className='text-2xl font-extralight text-center'> At <span className='font-semibold'>ServerByte</span>, our mission is to democratize access to advanced technology for all. We prioritize 
+                delivering exceptional value through our carefully crafted pricing model, ensuring high-quality server
+                management tools without compromising on performance or security. Transparency is at the heart of
+                our approach, allowing our customers to plan with confidence and avoid unexpected costs.</p>
+        </div>
       </div>
-      <InfoField description_side = 'r' animation = {supportAnimationData} description = "Server Byte offers exceptional customer support, available around the clock. Our team is ready to assist you 24/7 with configuration choices, server management, and billing inquiries. You can reach us via phone, email, or our live chat platform."/>
-      
-      <InfoField description_side = 'l' animation = {mobileAnimationData} description = "With ServerByte, you can securely connect to your servers using SSH directly from your mobile device. This feature ensures that you have the flexibility to perform critical tasks and manage your infrastructure on the go."/>
-      
-      <InfoField description_side = 'r' animation = {customAnimationData} description = "Server Byte provides you with the opportunity to select a custom build at an affordable price. With just a few clicks, you can configure your environment to meet your specific needs."/>
-
-      <InfoField description_side = 'l' animation = {affordableAnimationData} description = "At ServerByte, we believe that cutting-edge technology should be accessible to everyone. Our pricing model is designed to offer exceptional value, making high-quality server management tools affordable without compromising on performance or security. "/>
-    
-      <InfoField description_side = 'r' animation = {trafficAnimationData} description = "Our servers come with unlimited traffic capabilities, allowing you to transfer data without any restrictions. This ensures you can handle as much data as necessary for your operations."/>
-    </div>
     );
 }
 

@@ -1,5 +1,4 @@
-import { Network_Functions, calculate_horizontal_position, 
-         enable_HDD, enable_SATA, enable_SSD } from "./SelectionBar_functions.js";
+import { calculate_horizontal_position } from "./SelectionBar_functions.js";
 
 import React, { useState, useRef, useEffect } from 'react';
 
@@ -18,7 +17,6 @@ export const SelectionBar = ({title, type, callback}) => {
         4 : 16,
         5 : 24
     }
-
     const ram_count = {
         1 : 2,
         2 : 4,

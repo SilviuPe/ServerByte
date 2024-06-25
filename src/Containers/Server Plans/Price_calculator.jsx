@@ -1,14 +1,14 @@
-import React, { useState, forwardRef, useImperativeHandle, useEffect } from 'react'
+import React, { useState, forwardRef, useImperativeHandle, useEffect } from 'react';
 
-import IpIMG from '../../Assets/IP.png'
-import NetworkIMG from '../../Assets/Network.png'
-import StorageIMG from '../../Assets/Storage.png'
-import RamIMG from '../../Assets/RAM.png'
-import WindowsIMG from '../../Assets/Windows.png'
-import CpuIMG from '../../Assets/CPU.png'
-import CentosIMG from '../../Assets/Centos.png'
-import UbuntuIMG from '../../Assets/Ubuntu.png'
-import CustomOsIMG from '../../Assets/CustomOS.png'
+import IpIMG from '../../Assets/IP.png';
+import NetworkIMG from '../../Assets/Network.png';
+import StorageIMG from '../../Assets/Storage.png';
+import RamIMG from '../../Assets/RAM.png';
+import WindowsIMG from '../../Assets/Windows.png';
+import CpuIMG from '../../Assets/CPU.png';
+import CentosIMG from '../../Assets/Centos.png';
+import UbuntuIMG from '../../Assets/Ubuntu.png';
+import CustomOsIMG from '../../Assets/CustomOS.png';
 
 import {Price_functions} from './ServerPlanFunctions.js';
 
@@ -82,27 +82,27 @@ const Price_calculator = forwardRef((props, ref) => {
         <div className='title'><h2 className='text-center font-medium mb-x'>Final Server Configuration</h2></div>
         <div className='final_configuration pl-pc2'>
             <div className='CPU flex mb-8'>
-                <img src = {CpuIMG} />
+                <img alt = '' src = {CpuIMG} />
                 <p className='ml-x' style = {{fontSize: '14px'}}> {configuration.cpu} x vCPU (2x{configuration.cpu} threads)</p>
             </div>
             <div className='RAM flex mb-8'>
-                <img src = { RamIMG }/>
+                <img alt = '' src = { RamIMG }/>
                 <p className='ml-x' style = {{fontSize: '14px'}}>{configuration.ram} GB RAM Memory</p>
             </div>
             <div className='Storage flex mb-8'>
-                <img src = { StorageIMG }/>
+                <img alt = '' src = { StorageIMG }/>
                 <p className='ml-x' style = {{fontSize: '14px'}}> {configuration.storage.type} {configuration.storage.memory} {configuration.storage.units} Storage</p>
             </div>
             <div className='Network flex mb-8'>
-                <img src = { NetworkIMG }/>
+                <img alt = '' src = { NetworkIMG }/>
                 <p className='ml-x' style = {{fontSize: '14px'}}><b>{configuration.traffic} TB</b> Network Traffic</p>
             </div>
             <div className='IP flex mb-8'>
-                <img src = { IpIMG }/>
+                <img alt = '' src = { IpIMG }/>
                 <p className='ml-x' style = {{fontSize: '14px'}}> Address Type: IPv{configuration.ip}</p>
             </div>
             <div className='OS flex mb-8'>
-                <img src = { configuration.OSimage }/>
+                <img alt = '' src = { configuration.OSimage }/>
                 <p className='ml-x' style = {{fontSize: '14px'}}> {configuration.os}</p>
             </div>
         </div>
