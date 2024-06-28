@@ -101,6 +101,19 @@ module.exports = {
         white_transparent_full: "rgba(200,200,200,0.1)"
       }
     },
+    screens : {
+        smPhone : '320px',
+        iPhoneX : '375px',
+        iPhone8 : '414px',
+        lgPhone : '480px',
+        iPadX : '768px',
+        iPadY : '1024px',
+        smLaptop : '1280px',
+        commonLaptop : '1366px',
+        mdMonitod : '1440px',
+        FHD : '1920px',
+        lgMonitor : '2560px'
+    }
   },
   variants: {
     extend: {
