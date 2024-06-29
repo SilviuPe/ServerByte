@@ -22,12 +22,17 @@ const Footer = () => {
 
     const functions = footer_functions();
     return (
-    <div className='Footer flex px-m text-white pb-m mt-x2l'>
-        <div className='contact_us w-full'>
-            <h2 className='title text-center mb-s text-lg'> Contact Us</h2>
-            <div className='flex justify-evenly h-full' style = {{color: 'rgba(255,255,255,0.7)'}}>
+    <div className='Footer flex px-m text-white pb-m mt-x2l
+                    smPhone:max-lgPhone:px-2 smPhone:flex-col'>
+        <div className='contact_us w-full
+                        smPhone:max-lgPhone:mx-4'>
+            <h2 className='title text-center mb-s text-lg
+                            smPhone:max-lgPhone:text-sm'> Contact Us</h2>
+            <div className='flex justify-evenly h-full
+                                smPhone:max-lgPhone:flex-col smPhone:max-lgPhone:justify-between' style = {{color: 'rgba(255,255,255,0.7)'}}>
                 <div className='Address h-full'>
-                    <h2 className='title text-center mb-x'> Address </h2>
+                    <h2 className='title text-center mb-x
+                                    smPhone:max-lgPhone:text-sm'> Address </h2>
                     <div classname = 'items-center'>
                         <div className='flex mt-pc1 items-center hover:text-white cursor-pointer'>
                             <img style = {{width:'16px', height:'16px'}} src = {GlobeIMG}></img>
@@ -44,7 +49,8 @@ const Footer = () => {
                     </div>
                 </div>
                 <div className='Contacts h-full'>
-                    <h2 className='title text-center mb-x'> Contacts </h2>
+                    <h2 className='title text-center mb-x
+                                    smPhone:max-lgPhone:text-sm smPhone:max-lgPhone:mt-x'> Contacts </h2>
                     <div className='items-center'>
                         <div className='flex mt-pc1 hover:text-white cursor-pointer'>
                             <img style = {{width:'16px', height:'16px'}} src = {EmailIMG}></img>
@@ -62,12 +68,16 @@ const Footer = () => {
 
 
 
-        <div className='contact_us w-full'>
-            <h2 className='title text-center mb-s text-lg'> Direct Links</h2>
-            <div className='flex justify-evenly h-full' style = {{color: 'rgba(255,255,255,0.7)'}}>
+        <div className='direct_links w-full
+                         smPhone:max-lgPhone:mx-4 smPhone:mt-m'>
+            <h2 className='title text-center mb-s text-lg
+                            smPhone:max-lgPhone:text-sm'> Direct Links</h2>
+            <div className='flex justify-evenly h-full
+                            smPhone:max-lgPhone:flex-col' style = {{color: 'rgba(255,255,255,0.7)'}}>
                 <div className='Serverbyte h-full'>
-                    <h2 className='title text-center mb-x'> ServerByte </h2>
-                    <div classname = 'items-center '>
+                    <h2 className='title text-center mb-x
+                                    smPhone:max-lgPhone:text-sm'> ServerByte </h2>
+                    <div classname = 'items-center'>
                         <div className='flex mt-pc1 items-center hover:text-white cursor-pointer'>
                             <img style = {{width:'16px', height:'16px'}} src = {CustomIMG}></img>
                             <p className = "ml-5 text-sm">Custom VPS </p>
@@ -87,7 +97,8 @@ const Footer = () => {
                     </div>
                 </div>
                 <div className='Customer-care h-full'>
-                    <h2 className='title text-center mb-x'> Customer Care </h2>
+                    <h2 className='title text-center mb-x
+                                    smPhone:max-lgPhone:text-sm smPhone:max-lgPhone:mt-x'> Customer Care </h2>
                     <div className='items-center'>
                         <div className='flex mt-pc1 hover:text-white cursor-pointer'>
                             <img style = {{width:'16px', height:'16px'}} src = {SupportIMG}></img>
